@@ -1,0 +1,68 @@
+@charset "UTF-8";
+/* CSS Document */
+
+
+body {
+	font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", Verdana, "sans-serif";
+}
+
+#container {
+	width: 70%;
+	margin-right: auto;
+	margin-left: auto;
+	text-align: center;	
+}
+
+#header {
+	background-color: beige;
+	
+}
+
+/* CSS for email*/
+#email-container {
+	padding: 0 20px;
+}
+
+
+#email-header h1{
+	font-size: 40px;
+	float: left;
+}
+
+#email-header .search-container{
+	display: inline;
+	float: left;
+	margin: 35px 0 0 30px;
+}
+
+#email-header .search-container button, input{
+	height: 30px;	
+}
+
+#email-header .search-container input{
+	width: 200px;
+	padding: 0 10px;
+}
+
+#nav-column {
+	float: left;
+	width: 10%;
+	clear: both;
+}
+
+#nav-column ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 10px;
+}
+
+#nav-column li {
+	height: 30px;
+}
+
+#emails {
+	width: 90%;
+	float: left;
+	border-top: 30px solid #9FCCFF;
+	background-color: gray;
+}
