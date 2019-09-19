@@ -7,7 +7,8 @@ body {
 }
 
 #container {
-	width: 70%;
+	width: 80vw;
+	position: relative;
 	margin-right: auto;
 	margin-left: auto;
 	text-align: center;	
@@ -53,15 +54,46 @@ body {
 #nav-column ul {
 	list-style-type: none;
 	margin: 0;
-	padding: 10px;
+	padding: 0 10px;
 }
 
 #nav-column li {
 	height: 30px;
 }
 
+#nav-column a{
+	margin-left: 10px;
+}
+
+#nav-column .active {
+	background-color: #9FCCFF;
+}
+
 #emails {
-	width: 90%;
+	width: 85%;
 	float: left;
 	border-top: 30px solid #9FCCFF;
+	border-left: 10px solid #9FCCFF;
 }
+
+.email-prev{
+	min-width: 100%;
+	border-bottom: 2px solid black;
+}
+
+.email-prev .from{
+	width: 25%;
+	overflow: hidden;
+	padding-left: 10px;
+}
+
+.email-prev .preview{
+	width:75%;
+	overflow: hidden;
+	color: blue;
+}
+
+.email-prev .time{
+	padding-right: 10px;
+}
+
