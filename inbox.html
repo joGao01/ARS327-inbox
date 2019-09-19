@@ -1,23 +1,20 @@
 <!doctype html>
 <html>
 <head>
-<meta charset="UTF-8">
+	<meta charset="UTF-8">
 	<title>Inbox</title>
 	<link rel = "stylesheet" href="style.css">
+	<script src="script.js"></script>
+
+    <script>
+        window.onload = function(){ loadHeader(); }
+    </script>
 </head>
 
 <body>
 	<div id="email-container">
 		<div id="email-header">
-			<h1>EMAIL</h1>
-			<div class="search-container">
-				<form action="index.html">
-				  <input type="text" placeholder="Search.." name="search">
-				  <button type="submit">Search</button>
-				</form>
-			</div>
 		</div>
-
 		
 		<div id="nav-column">
 			<ul>
@@ -33,7 +30,7 @@
 
 		<div id="emails">
 			<table>
-				<tr class="email-prev">
+				<tr class="email-prev" >
 					<td class="from">Sam Stanley</td>
 					<td class="preview">[URGENT] PASTA OR BEANS</td>
 					<td class="time">8:32AM</td>
