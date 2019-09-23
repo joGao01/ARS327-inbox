@@ -7,7 +7,9 @@
 	<script src="script.js"></script>
 
     <script>
-        window.onload = function(){ loadHeader(); }
+        window.onload = function(){ 
+			init(); 
+		}
     </script>
 </head>
 
@@ -30,12 +32,29 @@
 
 		<div id="emails">
 			<table>
-				<tr class="email-prev" >
+				<tr class="email-prev" onclick="openEmail(0)">
 					<td class="from">Sam Stanley</td>
 					<td class="preview">[URGENT] PASTA OR BEANS</td>
 					<td class="time">8:32AM</td>
 				</tr>
+				<tr class="email-prev" onclick="openEmail(0)">
+					<td class="from">Sam Stanley</td>
+					<td class="preview">[URGENT] PASTA OR BEANS</td>
+					<p class="email-body"></p>
+					<td class="time">8:32AM</td>
+				</tr>
 			</table>
+
+			<div id="myModal" class="modal">
+				<div id="modal-content">
+					<p id="back-link" onclick="closeEmail() ">back</p>
+					<h3 id="subject"><b>Subject Line</b></h3>
+					<p id="sender">Sender</p>
+					<p id="email">Email</p>
+					<hr>
+					<p id="body">Content</p>
+				</div>
+			</div>
 		</div>
 	</div>
 </body>
