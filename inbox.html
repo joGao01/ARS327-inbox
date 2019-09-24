@@ -9,12 +9,18 @@
     <script>
         window.onload = function(){ 
 			init(); 
+			loadEmailPrevs(inboxEmails);
 		}
     </script>
 </head>
 
 <body>
+	<div id="banner-notif">
+		This inbox is archived. You are able to view messages, but emails cannot be sent out.
+		<button type="button" id="gotIt" style="display: inline;" onclick="gotIt()">Got it</button>
+	</div>
 	<div id="email-container">
+		
 		<div id="email-header">
 		</div>
 		
@@ -31,18 +37,7 @@
 		</div>
 
 		<div id="emails">
-			<table>
-				<tr class="email-prev" onclick="openEmail(0)">
-					<td class="from">Sam Stanley</td>
-					<td class="preview">[URGENT] PASTA OR BEANS</td>
-					<td class="time">8:32AM</td>
-				</tr>
-				<tr class="email-prev" onclick="openEmail(0)">
-					<td class="from">Sam Stanley</td>
-					<td class="preview">[URGENT] PASTA OR BEANS</td>
-					<p class="email-body"></p>
-					<td class="time">8:32AM</td>
-				</tr>
+			<table id="email-table">
 			</table>
 
 			<div id="myModal" class="modal">

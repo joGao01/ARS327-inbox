@@ -1,33 +1,40 @@
 @charset "UTF-8";
 /* CSS Document */
 
-
 body {
 	font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", Verdana, "sans-serif";
+	margin: 0;
+	padding: 0;
 }
 
-#container {
-	width: 80vw;
-	position: relative;
-	margin-right: auto;
-	margin-left: auto;
-	text-align: center;	
-}
-
-#header {
-	background-color: beige;
-	
-}
 
 /* CSS for email*/
 #email-container {
 	padding: 0 20px;
+	width: 95vw;
+	position: relative;
+	margin-right: auto;
+	margin-left: auto;
 }
 
+#banner-notif{
+	height: 4vh;
+	min-height: 20px;
+	padding: 7px;
+	background-color: orange;
+	color: black;
+	overflow: hidden;
+}
 
-#email-header h1{
+#email-header #logo{
 	font-size: 40px;
 	float: left;
+	margin-left: 10px;
+}
+
+#email-header #logo a{
+	text-decoration: none;
+	color: black;
 }
 
 #email-header .search-container{
@@ -51,8 +58,9 @@ body {
 #nav-column {
 	float: left;
 	width: 10%;
-	min-width:150px;
+	min-width: 150px;
 	clear: both;
+	margin-left: -20px;
 }
 
 #nav-column ul {
@@ -80,13 +88,16 @@ body {
 	border-bottom: 25px solid #9FCCFF;
 }
 
-.email-prev{
-	min-width: 100%;
-	border-bottom: 2px solid black;
+table, tr, td{
+	border-bottom: 1px solid gray;
 }
 
 .email-prev:hover, #back-link:hover{
 	cursor: pointer;
+}
+
+.email-prev:visited {
+	background-color: gray;
 }
 
 .email-prev .from{
@@ -113,7 +124,7 @@ body {
 	top: 0;
 	width: 100%; /* Full width */
 	height: 100%; /* Full height */
-	overflow: auto; /* Enable scroll if needed */
+	overflow: scroll; /* Enable scroll if needed */
 	background-color: rgb(0,0,0); /* Fallback color */
 	background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 }
@@ -130,4 +141,13 @@ body {
 	font-size: 10px;
 	text-decoration: underline;
 	color: blue;
+}
+
+#modal-content #email{
+	font-size: 12px;
+	line-height: 14px;
+}
+
+#modal-content #sender{
+	line-height: 10px;
 }

@@ -3,16 +3,26 @@
 - It would be really cool if after opening a certain email, the inbox looked different
 - you can't compose mail
 
-This person let work consume their entire life and now it feels like its kind of falling apart, but hey, at least their getting the promotions they want
+A person going through a change. Physical. 
+A narrative that starts at the end and goes to the beginning
+Somehow has to tie into their work otherwise it would be really weird for email communication
 
-Super power-hungry?
+"This is an archived email address. You can view messages, but emails cannot be sent out 
+storyline:
+- Gregor wakes up as an insect
+- 
 
 Inbox:
- all this work related stuff
- networking and making connections
+- I heard about your affliction through a mutual acquaintance. I am very sorry to hear that you can no longer get up on your own in the mornings. From what I hear, you have transformed quite a bit. I think I know someone who may be able to help. Let me know if you want to discuss this over coffee.
+- My condolences for your unfortunate condition. I can't imagine what it's like to be in your position right now. I am inexperienced in such matters, but perhaps an entomologist would be able to shed some light into what is happening. Once again, best of luck regarding your health. If you need to take time off from our collaboration to recooperate, I completely understand.
+- I hope this email finds you well. My name is Samuel Stanley, and I am reaching out to you about selling our knives. I was introduced to you by a friend, Steve Vector. Our knives are of good quality, and my company would be willing to give a discount for bulk purchases. Please let me know what you think of this offer. 
+- Hello team, we will have a meeting tomorrow in conference room B to talk about Gregor's condition. Be there or be square. 
+- Following the incident report from one of our employees, we have temporarily stopped the use of pesticides in our building. If you notice any extra bugs (pun intended), please do not be alarmed. As always, please properly flag bugs in your code.  
+- Hey bro, Devan from the marketing department here. I heard rumors that you turned into roach last night. That's so fucking cool, man. Do you think we could use you to promote our new product? 
+
 
 Starred:
- Show their priorities
+
  
 Sent Mail:
 
@@ -20,7 +30,7 @@ Drafts:
  many many unsent emails to his partner and friends
  dates are much older than current date and time
 
-All Mail:
+Archived:
 
 
 Spam:
