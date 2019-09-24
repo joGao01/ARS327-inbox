@@ -42,11 +42,12 @@ Starred:
 Sent Mail:
 
 Drafts:
- many many unsent emails to his partner and friends
+ many many unsent emails to his family (very recent)
  dates are much older than current date and time
 
 Archived:
-
+ old stuff from work
+ or something
 
 Spam:
  the same email over and over again
@@ -56,4 +57,3 @@ Trash:
  Previous emails from his partner
  remnants of the ruined relationship
 
-gods this is so depressing lmao
