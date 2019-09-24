@@ -116,6 +116,7 @@ table, tr, td{
 	padding-right: 10px;
 }
 
+/*pulled from w3schools*/
 .modal {
 	display: none; /* Hidden by default */
 	position: fixed; /* Stay in place */
@@ -136,6 +137,7 @@ table, tr, td{
 	border: 1px solid #888;
 	width: 60%; /* Could be more or less, depending on screen size */
 }
+/*end of content from w3schools*/
 
 #modal-content #back-link{
 	font-size: 10px;

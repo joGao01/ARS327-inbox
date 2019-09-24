@@ -74,7 +74,7 @@ function closeEmail(){
 //Email structure: senderEmail, sender, subject, time, text
 var inboxEmails = [];
 
-inboxEmails[0] = {
+inboxEmails.push({
     senderEmail: "rosa.line@stonybrook.edu",
     sender: "Rosa Line",
     subject: "Concerning the news",
@@ -86,9 +86,9 @@ inboxEmails[0] = {
     <br> I think I know someone who may be able to help. Let me know if you
     want to discuss this over coffee.
     <br><br> Best, <br> Rosa`
-};
+});
 
-inboxEmails[1] = {
+inboxEmails.push({
     senderEmail: "rosa.line@stonybrook.edu",
     sender: "Rosa Line",
     subject: "About out Collaboration",
@@ -103,10 +103,11 @@ inboxEmails[1] = {
     to recooperate, I completely understand.
 
     <br><br> Sincerely, <br> Sam`
-};
+});
 
 //Email structure: senderEmail, sender, subject, time, text
 var starredEmails = [];
+
 
 //Email structure: senderEmail, sender, subject, time, text
 var draftEmails = [];
