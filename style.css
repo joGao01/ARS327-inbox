@@ -5,7 +5,7 @@ body {
 	font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", Verdana, "sans-serif";
 	margin: 0;
 	padding: 0;
-	font-size: 3vh;
+	/*font-size: 3vh; */
 }
 
 
@@ -93,6 +93,8 @@ body {
 
 table, tr, td{
 	border-bottom: 1px solid gray;
+	overflow: hidden;
+	white-space: nowrap;
 }
 
 .email-prev:hover, #back-link:hover{
@@ -105,13 +107,11 @@ table, tr, td{
 
 .email-prev .from{
 	width: 25%;
-	overflow: hidden;
 	padding-left: 10px;
 }
 
 .email-prev .preview{
 	width:75%;
-	overflow: hidden;
 	color: blue;
 }
 
