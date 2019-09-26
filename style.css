@@ -1,6 +1,28 @@
 @charset "UTF-8";
 /* CSS Document */
 
+/*Bug Page CSS*/
+#bug-page{
+	background-image: url("images/bug.jpg");
+}
+#bug-page #modal-content{
+	text-align: center
+}
+
+#bug-page #modal-content img{
+	max-width: 80%;
+	margin-right: auto;
+	margin-left: auto;
+	display: block;
+	margin-bottom: 5%
+}
+
+#bug-page button{
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
 body {
 	font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", Verdana, "sans-serif";
 	margin: 0;
@@ -8,6 +30,19 @@ body {
 	/*font-size: 3vh; */
 }
 
+/*Landing Page CSS*/
+#landingModal {
+	position: fixed; /* Stay in place */
+	display: block;
+	z-index: 1; /* Sit on top */
+	left: 0;
+	top: 0;
+	width: 100%; /* Full width */
+	height: 100%; /* Full height */
+	overflow: scroll; /* Enable scroll if needed */
+	background-color: rgb(0,0,0); /* Fallback color */
+	background-color: rgba(0,0,0,0.7); /* Black w/ opacity */
+}
 
 /* CSS for email*/
 #email-container {

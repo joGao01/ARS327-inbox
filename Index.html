@@ -2,21 +2,59 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>A story thing</title>
+	<title>Inbox</title>
 	<link rel = "stylesheet" href="style.css">
+	<script src="script.js"></script>
+
+    <script>
+        window.onload = function(){ 
+			init(); 
+			loadEmailPrevs(inboxEmails);
+		}
+    </script>
 </head>
 
 <body>
-	
-	<div id="container">
-		<div id="header">
-			<h1> A STORY THING </h1>
+	<div id="email-container">
+		
+		<div id="email-header">
 		</div>
-	
-		<a href="inbox.html">View art</a>
-		<p>[Enter description of art here]</p>
+		
+		<div id="nav-column">
+			<ul>
+				<li class="active"><a href="inbox.html">Inbox</a></li>
+				<li><a href="starred.html">Starred</a></li>
+				<li><a href="sent.html">Sent Mail</a></li>
+				<li><a href="drafts.html">Drafts</a></li>
+				<li><a href="archived.html">Archived</a></li>
+				<li><a href="spam.html">Spam</a></li>
+				<li><a href="trash.html">Trash</a></li>
+			</ul>
+		</div>
+
+		<div id="emails">
+			<table id="email-table">
+			</table>
+		</div>
+
+		<div id="landingModal" class="modal">
+			<div id="modal-content">
+				<h3 id="subject"><b>Archived Inbox of</b></h3>
+				<p id="sender">To: Jefe Bezos</p>
+				<p id="email">jefe.bezos@amazoff.com</p>
+				<hr>
+				<p id="body">
+					Mr. Bezos, <br><br>
+					I'm writing to confirm that I've received the archived inbox of
+					Gregor Samsa. Thank you, and I'm sorry.
+					<br><br>
+					Best, <br> Grete
+				</p>
+				<button onclick="location.href='inbox.html'">Continue to Archive</button>
+			</div>
+		</div>
 	</div>
-		
-		
 </body>
+
 </html>
+

@@ -1,5 +1,17 @@
 function init(){
     loadHeader();
+    createBanner();
+}
+
+function createBanner(){
+    var banner = document.createElement("div");
+    banner.id = "banner-notif";
+    var bannerText = document.createTextNode(`Showing archived inbox from 
+    09/01/19 to termination. You are able to view messages, 
+    but emails cannot be sent out.`);
+    banner.appendChild(bannerText);
+
+    document.body.insertBefore(banner, document.body.firstChild);
 }
 
 function loadHeader(){
@@ -13,10 +25,17 @@ function loadHeader(){
         + "</form></div>";
 }
 
-function gotIt(){
-    var banner = document.getElementById("banner-notif");
-    banner.style.visibility = "hidden";
-}
+/*
+function generateFooter(){
+    var footer = document.createElement("div");
+    footer.id="footer";
+    var footerLink = document.createTextNode("Back to Landing Page");
+    footerLink.onclick = function() { location.href = "index.html"};
+    footer.appendChild(footerLink);
+    var emailBody = document.getElementById("email-container");
+    var emails = document.getElementById("emails");
+    emailBody.insertAfter(footer, emails);
+} */
 
 //takes int x and opens corresponding email
 function openEmail(list, x){
@@ -91,26 +110,39 @@ inboxEmails.push({
     `
 });
 
-inboxEmails.push({
+/*inboxEmails.push({
     senderEmail: "greteSa@email.com",
     sender: "Grete Samsa",
     subject: "Deepest Regrets",
     time: "09/26/19",
     text: `Gregor, <br> <br>
-    I hope this email finds you well. I've slept very poorly the past few days, 
-    knowing what we've done to you. I don't know if you still 
+    I hope this email finds you well. I've slept poorly since you have run
+    away from home. I don't know if you still 
     check your inbox, or if you even still have your computer.
-    I just want you to know how sorry I am.
+    I'm sorry. I hope you're okay.
 
     <br><br> Love, <br> Grete`
+});*/
+
+inboxEmails.push({
+    senderEmail: "brandonTheMan@email.com",
+    sender: "Brandon TheMan",
+    subject: "RE: Concerning your Graigslist Listing",
+    time: "09/16/19",
+    text: `Good morning Gregor, <br><br>
+    Hey, this is a follow up email about your Graigslist listing. Could you 
+    please consider my initial email and give me a response. I am in dire need
+    of a mattress and a bedframe.
+    <br><br> Brandon`
 });
 
 inboxEmails.push({
     senderEmail: "greteSa@email.com",
     sender: "Grete Samsa",
-    subject: "RE:Furniyure",
+    subject: "RE:Furniture",
     time: "09/15/19",
-    text: `We're just doing what's best for you.`
+    text: `We have to find a way to pay the bills to. We're
+    just doing what's best for you.`
 });
 
 inboxEmails.push({
@@ -143,6 +175,16 @@ inboxEmails.push({
 });
 
 inboxEmails.push({
+    senderEmail: "jefe.bezos@amazoff.com",
+    sender: "Jefe Bezos",
+    subject: "RE:RE Extended Time Off",
+    time: "09/13/19",
+    text: `Gregor <br> <br>
+    That is correct. You will not be paid for this period.
+    <br><br>Best, <br> Jefe Bezos <br> CEO of Amazoff`
+});
+
+inboxEmails.push({
     senderEmail: "Jefe.Bezos@amazoff.com",
     sender: "Jefe Bezos",
     subject: "Extended Time Off",
@@ -171,6 +213,16 @@ inboxEmails.push({
 });
 
 inboxEmails.push({
+    senderEmail: "greteSa@email.com",
+    sender: "Grete Samsa",
+    subject: "RE: Forgot my lunch",
+    time: "09/10/19",
+    text: `
+    Sorry Im busy
+    `
+});
+
+inboxEmails.push({
     senderEmail: "Sal.Lami@eyebm.com",
     sender: "Sal Lami",
     subject: "About out Collaboration",
@@ -191,7 +243,7 @@ inboxEmails.push({
     senderEmail: "greteSa@email.com",
     sender: "Grete Samsa",
     subject: "RE:RE: I heard about last night",
-    time: "09/09/19",
+    time: "09/07/19",
     text: `Hey, <br> <br>
     Let me know if it happens again. 
 
@@ -203,7 +255,7 @@ inboxEmails.push({
     senderEmail: "greteSa@email.com",
     sender: "Grete Samsa",
     subject: "I heard about last night",
-    time: "09/09/19",
+    time: "09/07/19",
     text: `Hey, <br> <br>
     I heard that father threw things at you last night. I'm sorry that I couldn't
     be there to help you. I will have a talk with him when I get back from my trip.
@@ -258,7 +310,7 @@ inboxEmails.push({
     senderEmail: "Devon.Russo@amazoff.com",
     sender: "Devon Russo",
     subject: "Hey man",
-    time: "09/05/19",
+    time: "09/04/19",
     text: ` Hey man, <br><br>
     It's your marketing colleague, Devon. I know we've never talked even though
     we work in the same department, but
@@ -272,7 +324,7 @@ inboxEmails.push({
     senderEmail: "greteSa@email.com",
     sender: "Grete Samsa",
     subject: "Lunch",
-    time: "09/05/19",
+    time: "09/04/19",
     text: `Hey Gregor, <br> <br>
     I know you can't use your phone anymore, but I wanted you to know that you
     forgot your lunch at home this morning. As your responsible younger sister,
@@ -287,7 +339,7 @@ inboxEmails.push({
     senderEmail: "Jefe.Bezos@amazoff.com",
     sender: "Jefe Bezos",
     subject: "Emergency Meeting Tomorrow",
-    time: "09/04/19",
+    time: "09/03/19",
     text: `Hello, <br> <br>
     We will be having a meeting in conference room B to discuss your special
     circumstances tomorrow. Please let me know if you can make it.
@@ -331,8 +383,8 @@ starredEmails.push({
 var draftEmails = [];
 
 draftEmails.push({
-    senderEmail: "gregor.samsa@amazoff.com",
-    sender: "Gregor Samsa",
+    senderEmail: "From: gregor.samsa@amazoff.com",
+    sender: "To: Grete Samsa",
     subject: "Sorry (unsent)",
     time: "09/21/19",
     text: `
@@ -343,8 +395,8 @@ draftEmails.push({
 });
 
 draftEmails.push({
-    senderEmail: "gregor.samsa@amazoff.com",
-    sender: "Gregor Samsa",
+    senderEmail: "From: gregor.samsa@amazoff.com",
+    sender: "To: Grete Samsa",
     subject: "Sorry (unsent)",
     time: "09/20/19",
     text: `Grete. <br> <br>
@@ -357,30 +409,61 @@ draftEmails.push({
 });
 
 draftEmails.push({
-    senderEmail: "gregor.samsa@amazoff.com",
-    sender: "Gregor Samsa",
-    subject: "Furmuture (unsent)",
+    senderEmail: "From: gregor.samsa@amazoff.com",
+    sender: "To: Brandon TheMan",
+    subject: "RE:RE: Concerning your Graigslist Listing",
+    time: "09/16/19",
+    text: `
+    Sure whatever`
+});
+
+draftEmails.push({
+    senderEmail: "From: gregor.samsa@amazoff.com",
+    sender: "To: Grete Samsa",
+    subject: "Furniture (unsent)",
     time: "09/15/19",
     text: `Grete. <br> <br>
-    Please don't sell my stuff.
+    Why'd you do it? Do you know what it feels like to return to an empty 
+    room every night? Why didn't you just sell my bedframe and mattress at a 
+    yard sale as well?
     `
 });
 
 draftEmails.push({
-    senderEmail: "gregor.samsa@amazoff.com",
-    sender: "Gregor Samsa",
+    senderEmail: "From: gregor.samsa@amazoff.com",
+    sender: "To: Grete Samsa",
+    subject: "Furmuture (unsent)",
+    time: "09/15/19",
+    text: `Grete. <br> <br>
+    Please don't sell my fucking stuff.
+    `
+});
+
+draftEmails.push({
+    senderEmail: "From: gregor.samsa@amazoff.com",
+    sender: "To: Grete Samsa",
+    subject: "Furmuture (unsent)",
+    time: "09/15/19",
+    text: `Grete. <br> <br>
+    Please don't sell my fucking stuff.
+    `
+});
+
+draftEmails.push({
+    senderEmail: "From: gregor.samsa@amazoff.com",
+    sender: "To: Grete Samsa",
     subject: "RE: I heard about last night (unsent)",
-    time: "09/09/19",
+    time: "09/07/19",
     text: `Grete <br> <br>
     im sorry 
     `
 });
 
 draftEmails.push({
-    senderEmail: "gregor.samsa@amazoff.com",
-    sender: "Gregor Samsa",
+    senderEmail: "From: gregor.samsa@amazoff.com",
+    sender: "To: Grete Samsa",
     subject: "RE: I heard about last night (unsent)",
-    time: "09/09/19",
+    time: "09/07/19",
     text: `Grete <br> <br>
     why is he like this 
 
@@ -389,8 +472,28 @@ draftEmails.push({
 });
 
 draftEmails.push({
-    senderEmail: "gregor.samsa@amazoff.com",
-    sender: "Gregor Samsa",
+    senderEmail: "From: gregor.samsa@amazoff.com",
+    sender: "To: Rosa Line",
+    subject: "RE: Concerning the news (unsent)",
+    time: "09/05/19",
+    text: `Rosa, <br> <br>
+    Please stop sending me emails
+    `
+});
+
+draftEmails.push({
+    senderEmail: "From: gregor.samsa@amazoff.com",
+    sender: "To: Rosa Line",
+    subject: "RE: Concerning the news (unsent)",
+    time: "09/05/19",
+    text: `Rosa, <br> <br>
+    Thank you for the concern. Who told you?
+    `
+});
+
+draftEmails.push({
+    senderEmail: "From: gregor.samsa@amazoff.com",
+    sender: "To: Jefe Bezos",
     subject: "RE: Emergency Meeting Tomorrow (unsent)",
     time: "02/04/19",
     text: `Mr. Bezos <br> <br>
@@ -401,8 +504,8 @@ draftEmails.push({
 });
 
 draftEmails.push({
-    senderEmail: "gregor.samsa@amazoff.com",
-    sender: "Gregor Samsa",
+    senderEmail: "From: gregor.samsa@amazoff.com",
+    sender: "To: Jefe Bezos",
     subject: "RE: Emergency Meeting Tomorrow (unsent)",
     time: "02/04/19",
     text: `Mr. Bezos <br> <br>
@@ -411,8 +514,8 @@ draftEmails.push({
 });
 
 draftEmails.push({
-    senderEmail: "gregor.samsa@amazoff.com",
-    sender: "Gregor Samsa",
+    senderEmail: "From: gregor.samsa@amazoff.com",
+    sender: "To: Jefe Bezos",
     subject: "Unable to go to Work (unsent)",
     time: "02/04/19",
     text: `Mr. Bezos <br> <br>
@@ -426,8 +529,8 @@ draftEmails.push({
 var sentEmails = [];
 
 sentEmails.push({
-    senderEmail: "gregor.samsa@amazoff.com",
-    sender: "Gregor Samsa",
+    senderEmail: "From: gregor.samsa@amazoff.com",
+    sender: "To: Grete Samsa",
     subject: "goodbye",
     time: "09/20/19",
     text: `Grete <br> <br>
@@ -438,20 +541,50 @@ sentEmails.push({
 });
 
 sentEmails.push({
-    senderEmail: "gregor.samsa@amazoff.com",
-    sender: "Gregor Samsa",
-    subject: "Furniyure",
+    senderEmail: "From: gregor.samsa@amazoff.com",
+    sender: "To: Grete Samsa",
+    subject: "RE:RE:Furniture",
+    time: "09/15/19",
+    text: `Grete. <br> <br>
+    Why'd you do it? Why'd you sell everything else?
+    `
+});
+
+sentEmails.push({
+    senderEmail: "From: gregor.samsa@amazoff.com",
+    sender: "To: Grete Samsa",
+    subject: "Furniture",
     time: "09/15/19",
     text: `greta <br> <br>
     Graigslist. My furniture. Why?`
 });
 
 sentEmails.push({
-    senderEmail: "gregor.samsa@amazoff.com",
-    sender: "Gregor Samsa",
+    senderEmail: "From: gregor.samsa@amazoff.com",
+    sender: "To: Jefe Bezos",
+    subject: "RE: Extended Time Off",
+    time: "09/13/19",
+    text: `Mr. Bezos <br> <br>
+    Understood. Am I to understand that I will not be paid during the extended time off?
+    <br><br>Best, <br> Gregor`
+});
+
+sentEmails.push({
+    senderEmail: "From: gregor.samsa@amazoff.com",
+    sender: "To: Grete Samsa",
+    subject: "Forgot my lunch",
+    time: "09/10/19",
+    text: `
+    can you bring it?
+    <br><br> Gregor`
+});
+
+sentEmails.push({
+    senderEmail: "From: gregor.samsa@amazoff.com",
+    sender: "To: Sal Lami",
     subject: "RE: About our Collaboration",
     time: "09/10/19",
-    text: `Hi Sam, <br> <br>
+    text: `Hi Sal, <br> <br>
     I apologize for my appearance, and I suggest you reach out to one of 
     my colleagues and ask for them to appear in the commercial.
     <br><br> Gregor
@@ -459,10 +592,10 @@ sentEmails.push({
 });
 
 sentEmails.push({
-    senderEmail: "gregor.samsa@amazoff.com",
-    sender: "Gregor Samsa",
+    senderEmail: "From: gregor.samsa@amazoff.com",
+    sender: "To: Grete Samsa",
     subject: "RE: I heard about last night",
-    time: "09/09/19",
+    time: "09/07/19",
     text: `Greta <br> <br>
     its ok 
     <br> I can take it.
@@ -470,8 +603,18 @@ sentEmails.push({
 });
 
 sentEmails.push({
-    senderEmail: "gregor.samsa@amazoff.com",
-    sender: "Gregor Samsa",
+    senderEmail: "From: gregor.samsa@amazoff.com",
+    sender: "To: Rosa Line",
+    subject: "RE: Concerning the news",
+    time: "09/05/19",
+    text: `Rosa, <br> <br>
+    Thank you for the concern. 
+    <br><br> Best, <br> Gregor`
+});
+
+sentEmails.push({
+    senderEmail: "From: gregor.samsa@amazoff.com",
+    sender: "To: Devon Ross",
     subject: "RE: Hey man",
     time: "09/04/19",
     text: `Devon, <br> <br>
@@ -481,8 +624,8 @@ sentEmails.push({
 });
 
 sentEmails.push({
-    senderEmail: "gregor.samsa@amazoff.com",
-    sender: "Gregor Samsa",
+    senderEmail: "From: gregor.samsa@amazoff.com",
+    sender: "To: Grete Samsa",
     subject: "RE: Lunch",
     time: "09/04/19",
     text: `Grete, <br> <br>
@@ -491,8 +634,8 @@ sentEmails.push({
 });
 
 sentEmails.push({
-    senderEmail: "gregor.samsa@amazoff.com",
-    sender: "Gregor Samsa",
+    senderEmail: "From: gregor.samsa@amazoff.com",
+    sender: "To: Jefe Bezos",
     subject: "RE: Emergency Meeting Tomorrow",
     time: "09/03/19",
     text: `Mr. Bezos <br> <br>
@@ -502,8 +645,8 @@ sentEmails.push({
 });
 
 sentEmails.push({
-    senderEmail: "gregor.samsa@amazoff.com",
-    sender: "Gregor Samsa",
+    senderEmail: "From: gregor.samsa@amazoff.com",
+    sender: "To: Jefe Bezos",
     subject: "Unable to make it to work today",
     time: "09/03/19",
     text: `mr. Bezos <br> <br>
@@ -515,8 +658,8 @@ sentEmails.push({
 });
 
 sentEmails.push({
-    senderEmail: "gregor.samsa@amazoff.com",
-    sender: "Gregor Samsa",
+    senderEmail: "From: gregor.samsa@amazoff.com",
+    sender: "To: Samuel Stanley",
     subject: "RE: Reaching out about marketing",
     time: "09/02/19",
     text: `Mr. Stanley <br> <br>
@@ -547,11 +690,36 @@ archivedEmails.push({
 var spamEmails = [];
 
 spamEmails.push({
-    senderEmail: "",
-    sender: "",
-    subject: "",
-    time: "",
-    text: ``
+    senderEmail: "mail@mail.adabe.com",
+    sender: "Adabe Creative Cloud",
+    subject: "The power of the paintbrush",
+    time: "09/05/19",
+    text: `something something advertisement subscription model
+    please buy our insanely expensive products because your company
+    forces you to use it. And also only several of our products are actually good
+    but you're forced to buy and use all of them anyway.`
+});
+
+spamEmails.push({
+    senderEmail: "info@mail.trianhr.com",
+    sender: "Dress Codes For the.",
+    subject: "Piercings, Tattoos, and More!",
+    time: "09/03/19",
+    text: `something something This webinar on Workplace Dress Codes 
+    will discuss your reasons and rights as an employer to establish a 
+    dress code in your workplace and how to develop and adopt one that 
+    complements your business. Don't get tattoos folks!`
+});
+
+spamEmails.push({
+    senderEmail: "mail@mail.adabe.com",
+    sender: "Adabe Creative Cloud",
+    subject: "Save over 40% off on Creative Cloud",
+    time: "09/02/19",
+    text: `something something advertisement subscription model
+    please buy our insanely expensive products because your company
+    forces you to use it. And also only several of our products are actually good
+    but you're forced to buy and use all of them anyway.`
 });
 
 var trashEmails = [];
