@@ -141,7 +141,7 @@ inboxEmails.push({
     sender: "Grete Samsa",
     subject: "RE:Furniture",
     time: "09/15/19",
-    text: `We have to find a way to pay the bills to. We're
+    text: `We have to find a way to pay the bills too. We're
     just doing what's best for you.`
 });
 
@@ -385,6 +385,57 @@ var draftEmails = [];
 draftEmails.push({
     senderEmail: "From: gregor.samsa@amazoff.com",
     sender: "To: Grete Samsa",
+    subject: "(unsent)",
+    time: "09/25/19",
+    text: `
+    Hungry.
+    <br> I would ask how you are doig
+    but i dpnt care
+
+    <br><br> Gregor
+    `
+});
+
+draftEmails.push({
+    senderEmail: "From: gregor.samsa@amazoff.com",
+    sender: "To: Grete Samsa",
+    subject: "(unsent)",
+    time: "09/24/19",
+    text: `
+    Time passes strangely. This is the only way i know what time it s.
+    But i find that i dont caare antmoer
+
+    <br><br> Gregor
+    `
+});
+
+draftEmails.push({
+    senderEmail: "From: gregor.samsa@amazoff.com",
+    sender: "To: Grete Samsa",
+    subject: "(unsent)",
+    time: "09/22/19",
+    text: `
+    I don't regret leaving though. 
+
+    <br><br> Gregor
+    `
+});
+
+draftEmails.push({
+    senderEmail: "From: gregor.samsa@amazoff.com",
+    sender: "To: Grete Samsa",
+    subject: "(unsent)",
+    time: "09/22/19",
+    text: `
+    I miss having a home. and food. even though I don't eat. 
+
+    <br><br> Gregor
+    `
+});
+
+draftEmails.push({
+    senderEmail: "From: gregor.samsa@amazoff.com",
+    sender: "To: Grete Samsa",
     subject: "Sorry (unsent)",
     time: "09/21/19",
     text: `
@@ -447,6 +498,17 @@ draftEmails.push({
     text: `Grete. <br> <br>
     Please don't sell my fucking stuff.
     `
+});
+
+draftEmails.push({
+    senderEmail: "From: gregor.samsa@amazoff.com",
+    sender: "To: Grete Samsa",
+    subject: "RE:RE:Forgot my lunch",
+    time: "09/10/19",
+    text: `
+    It's okay. I guess I don't really eat anyway.
+    I wonder how long I can last like this.
+    <br><br> Gregor`
 });
 
 draftEmails.push({
@@ -673,11 +735,13 @@ sentEmails.push({
 var archivedEmails = [];
 
 archivedEmails.push({
-    senderEmail: "greteSa@email.com",
-    sender: "Grete Samsa",
+    senderEmail: "jefe.bezos@email.com",
+    sender: "Jefe Bezos",
     subject: "Fwd: Concerning Gregor's Unique Condition",
     time: "09/03/19",
-    text: `Mr. Bezos, <br><br>
+    text: `
+    ---original from greteSa@email.com---<br>
+    Mr. Bezos, <br><br>
     Due to unforeseen, inexplicable circumstances, Gregor was unable to make
     it to work this morning. This is going to sound absurd, but bear with me.
     He woke up transformed into a large cockroach. He has been acclimating to 
