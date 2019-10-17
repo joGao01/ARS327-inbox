@@ -462,7 +462,7 @@ draftEmails.push({
 draftEmails.push({
     senderEmail: "From: gregor.samsa@amazoff.com",
     sender: "To: Brandon TheMan",
-    subject: "RE:RE: Concerning your Graigslist Listing",
+    subject: "RE:RE: Concerning your Graigslist Listing (unsent)",
     time: "09/16/19",
     text: `
     Sure whatever`
@@ -503,7 +503,7 @@ draftEmails.push({
 draftEmails.push({
     senderEmail: "From: gregor.samsa@amazoff.com",
     sender: "To: Grete Samsa",
-    subject: "RE:RE:Forgot my lunch",
+    subject: "RE:RE:Forgot my lunch (unsent)",
     time: "09/10/19",
     text: `
     It's okay. I guess I don't really eat anyway.
@@ -754,10 +754,25 @@ archivedEmails.push({
 var spamEmails = [];
 
 spamEmails.push({
+    senderEmail: "no-reply@trillo.com",
+    sender: "Trillo",
+    subject: "Get Trillo for Work!",
+    time: "09/10/19",
+    text: `
+    Discover these delightfully simple Trillo 
+    keyboard shortcuts and learn how new productivity highs 
+    are just a puff of a joint away.
+    If you have your eyes set on a new promotion or more 
+    responsibility at work, learn how to manage up to keep your
+    life from falling apart.
+    `
+});
+
+spamEmails.push({
     senderEmail: "mail@mail.adabe.com",
     sender: "Adabe Creative Cloud",
     subject: "The power of the paintbrush",
-    time: "09/05/19",
+    time: "09/09/19",
     text: `something something advertisement subscription model
     please buy our insanely expensive products because your company
     forces you to use it. And also only several of our products are actually good
@@ -768,7 +783,7 @@ spamEmails.push({
     senderEmail: "info@mail.trianhr.com",
     sender: "Dress Codes For the.",
     subject: "Piercings, Tattoos, and More!",
-    time: "09/03/19",
+    time: "09/07/19",
     text: `something something This webinar on Workplace Dress Codes 
     will discuss your reasons and rights as an employer to establish a 
     dress code in your workplace and how to develop and adopt one that 
@@ -779,11 +794,21 @@ spamEmails.push({
     senderEmail: "mail@mail.adabe.com",
     sender: "Adabe Creative Cloud",
     subject: "Save over 40% off on Creative Cloud",
-    time: "09/02/19",
+    time: "09/04/19",
     text: `something something advertisement subscription model
     please buy our insanely expensive products because your company
     forces you to use it. And also only several of our products are actually good
     but you're forced to buy and use all of them anyway.`
+});
+
+spamEmails.push({
+    senderEmail: "mail@imagine.com",
+    sender: "Imaginacao",
+    subject: "Get Inspired!",
+    time: "09/03/19",
+    text: `
+        <a href="https://en.wikipedia.org/wiki/The_Metamorphosis" target="_blank">thing</a>
+    `
 });
 
 var trashEmails = [];

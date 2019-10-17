@@ -57,3 +57,4 @@ Trash:
  Previous emails from his partner
  remnants of the ruined relationship
 
+make the search bar redirect to a BUG FIX PAGE
