@@ -9,7 +9,6 @@
     <script>
         window.onload = function(){ 
 			init(); 
-			loadEmailPrevs(inboxEmails);
 		}
     </script>
 </head>
@@ -22,13 +21,13 @@
 		
 		<div id="nav-column">
 			<ul>
-				<li class="active"><a href="inbox.html">Inbox</a></li>
-				<li><a href="starred.html">Starred</a></li>
-				<li><a href="sent.html">Sent Mail</a></li>
-				<li><a href="drafts.html">Drafts</a></li>
-				<li><a href="archived.html">Archived</a></li>
-				<li><a href="spam.html">Spam</a></li>
-				<li><a href="trash.html">Trash</a></li>
+				<li class = "active"><a href="#inbox" onclick="loadEmailPrevs(this, inboxEmails)">Inbox</a></li>
+				<li><a href="#starred" onclick="loadEmailPrevs(this,starredEmails)">Starred</a></li>
+				<li><a href="#sent" onclick="loadEmailPrevs(this,sentEmails)">Sent Mail</a></li>
+				<li><a href="#draft" onclick="loadEmailPrevs(this,draftEmails)">Drafts</a></li>
+				<li><a href="#archived" onclick="loadEmailPrevs(this,archivedEmails)">Archived</a></li>
+				<li><a href="#spam" onclick="loadEmailPrevs(this,spamEmails)">Spam</a></li>
+				<li><a href="#trash" onclick="loadEmailPrevs(this,trashEmails)">Trash</a></li>
 			</ul>
 		</div>
 

@@ -77,11 +77,28 @@ function generateEmailPrev(list, emailNum){
     time.innerHTML = emailObj.time;
 }
 
-function loadEmailPrevs(list){
+function loadEmailPrevs(element,list){
+    //clear original table
+    var tableParent = document.getElementById("email-table").parentElement;
+    tableParent.removeChild(document.getElementById("email-table"));
+    var newTable = document.createElement("table");
+    newTable.id = "email-table";
+
+    if (element != null){
+        var currActive = document.getElementsByClassName("active");
+        if(currActive.length != 0){
+            currActive[0].classList.remove("active");
+        }
+        element.parentElement.className = "active";
+    }
+    
+    tableParent.append(newTable);
+
     for(var i = 0; i < list.length; i++){
         generateEmailPrev(list, i);
     }
 }
+
 
 function closeEmail(){
     var modal = document.getElementById("myModal");
