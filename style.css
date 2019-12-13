@@ -170,10 +170,12 @@ table, tr, td{
 .email-prev .from{
 	width: 25%;
 	padding-left: 10px;
+	overflow: hidden;
 }
 
 .email-prev .preview{
 	width:75%;
+	overflow: hidden;
 	color: blue;
 }
 
