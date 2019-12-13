@@ -1,6 +1,12 @@
 function init(){
     loadHeader();
-    createBanner();
+    if(window.location.search.substr(1) != ""){
+        loadEmailPrevs(window.location.search.substr(1), eval(window.location.search.substr(1)+"Emails"));
+    } else {
+        
+        loadEmailPrevs('inbox', inboxEmails)
+    }
+    generateFooter();
 }
 
 function createBanner(){
@@ -25,17 +31,13 @@ function loadHeader(){
         + "</form></div>";
 }
 
-/*
+
 function generateFooter(){
-    var footer = document.createElement("div");
-    footer.id="footer";
-    var footerLink = document.createTextNode("Back to Landing Page");
-    footerLink.onclick = function() { location.href = "index.html"};
-    footer.appendChild(footerLink);
-    var emailBody = document.getElementById("email-container");
-    var emails = document.getElementById("emails");
-    emailBody.insertAfter(footer, emails);
-} */
+    var footer = document.getElementById("footer");
+    footer.innerHTML = "Use the search box or search options to find messages quickly! <br>"
+    +"You are currently using 4829 MB (31%) of your 15360 MB <br>"
+    + "<a href=\"index.html\"> Back to the Landing Page</a>";
+} 
 
 //takes int x and opens corresponding email
 function openEmail(list, x){
@@ -51,6 +53,10 @@ function openEmail(list, x){
     sender.innerHTML = list[x].sender;
     subject.innerHTML = "Subject: " + list[x].subject;
     email.innerHTML = list[x].text; 
+    list[x].visited = true;
+    var row = document.getElementById("email-table").rows[x];
+    row.classList.add("visited");
+    console.log(row.classList);
     //display modal
     modal.style.display = "block";
    
@@ -77,20 +83,19 @@ function generateEmailPrev(list, emailNum){
     time.innerHTML = emailObj.time;
 }
 
-function loadEmailPrevs(element,list){
+function loadEmailPrevs(str, list){
     //clear original table
     var tableParent = document.getElementById("email-table").parentElement;
     tableParent.removeChild(document.getElementById("email-table"));
     var newTable = document.createElement("table");
     newTable.id = "email-table";
 
-    if (element != null){
-        var currActive = document.getElementsByClassName("active");
-        if(currActive.length != 0){
-            currActive[0].classList.remove("active");
-        }
-        element.parentElement.className = "active";
+    var currActive = document.getElementsByClassName("active");
+    if(currActive.length != 0){
+        currActive[0].classList.remove("active");
     }
+    console.log(document.getElementById(str));
+    document.getElementById(str).className = "active";
     
     tableParent.append(newTable);
 

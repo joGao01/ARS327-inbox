@@ -9,7 +9,6 @@
     <script>
         window.onload = function(){ 
 			init(); 
-			loadEmailPrevs(inboxEmails);
 		}
     </script>
 </head>
@@ -22,13 +21,13 @@
 		
 		<div id="nav-column">
 			<ul>
-				<li class="active"><a href="inbox.html">Inbox</a></li>
-				<li><a href="starred.html">Starred</a></li>
-				<li><a href="sent.html">Sent Mail</a></li>
-				<li><a href="drafts.html">Drafts</a></li>
-				<li><a href="archived.html">Archived</a></li>
-				<li><a href="spam.html">Spam</a></li>
-				<li><a href="trash.html">Trash</a></li>
+				<li id="inbox"><a onclick="loadEmailPrevs('inbox',inboxEmails)" href="?inbox">Inbox</a></li>
+				<li id="starred"><a onclick="loadEmailPrevs('starred', starredEmails)" href="?starred" >Starred</a></li>
+				<li id="sent"><a onclick="loadEmailPrevs('sent', sentEmails)" href="?sent">Sent Mail</a></li>
+				<li id="draft"><a onclick="loadEmailPrevs('draft', draftEmails)" href="?draft">Drafts</a></li>
+				<li id="archived"><a onclick="loadEmailPrevs('archived', archivedEmails)" href="?archived">Archived</a></li>
+				<li id="spam"><a onclick="loadEmailPrevs('spam', spamEmails)" href="?spam">Spam</a></li>
+				<li id="trash"><a onclick="loadEmailPrevs('trash', trashEmails)" href="?trash">Trash</a></li>
 			</ul>
 		</div>
 
@@ -52,6 +51,9 @@
 				</p>
 				<button onclick="location.href='inbox.html'">Continue to Archive</button>
 			</div>
+		</div>
+
+		<div id="footer">
 		</div>
 	</div>
 </body>

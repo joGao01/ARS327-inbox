@@ -47,10 +47,19 @@ body {
 /* CSS for email*/
 #email-container {
 	padding: 0 20px;
-	width: 95vw;
+	width: 90vw;
 	position: relative;
 	margin-right: auto;
 	margin-left: auto;
+	display: grid;
+	grid-template-areas:
+		'header header header header header header header header  header header header'
+		'nav-column emails emails emails emails emails emails emails emails emails emails'
+		'footer footer footer footer footer footer footer footer footer footer footer';
+}
+
+#email-header{
+	grid-area: header;
 }
 
 #banner-notif{
@@ -61,6 +70,13 @@ body {
 	background-color: orange;
 	color: black;
 	overflow: hidden;
+}
+
+#footer {
+	grid-area: footer;
+	text-align: center;
+	margin: 1vh;
+	font-size: 2vh;
 }
 
 #email-header #logo{
@@ -94,24 +110,27 @@ body {
 
 #nav-column {
 	float: left;
-	width: 10%;
-	min-width: 150px;
+	overflow: hidden;
 	clear: both;
-	margin-left: -20px;
+	grid-area: nav-column;
+	min-width: 100px;
 }
 
 #nav-column ul {
 	list-style-type: none;
-	margin: 0;
+	margin: 0px;
 	overflow: hidden;
+	padding: 0px;
 }
 
 #nav-column li {
 	height: 30px;
+	margin: 0;
 }
 
 #nav-column a{
-	margin-left: 10px;
+	margin: 0px;
+	padding-left: 10px;
 }
 
 #nav-column .active {
@@ -119,11 +138,16 @@ body {
 }
 
 #emails {
-	width: 85%;
+	width: auto;
 	float: left;
 	border-top: 25px solid #9FCCFF;
 	border-left: 10px solid #9FCCFF;
 	border-bottom: 25px solid #9FCCFF;
+	grid-area: emails;
+}
+
+table {
+	width: 100%;
 }
 
 table, tr, td{
@@ -131,14 +155,17 @@ table, tr, td{
 	overflow: hidden;
 	white-space: nowrap;
 }
-
 .email-prev:hover, #back-link:hover{
 	cursor: pointer;
 }
 
-.email-prev:visited {
-	background-color: gray;
+.visited {
+	background-color: lightblue;
 }
+
+/*.email-prev:visited {
+	background-color: gray;
+} */
 
 .email-prev .from{
 	width: 25%;
@@ -153,6 +180,8 @@ table, tr, td{
 .email-prev .time{
 	padding-right: 10px;
 }
+
+
 
 /*pulled from w3schools*/
 .modal {

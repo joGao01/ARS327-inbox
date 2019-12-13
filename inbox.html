@@ -21,13 +21,13 @@
 		
 		<div id="nav-column">
 			<ul>
-				<li class = "active"><a href="#inbox" onclick="loadEmailPrevs(this, inboxEmails)">Inbox</a></li>
-				<li><a href="#starred" onclick="loadEmailPrevs(this,starredEmails)">Starred</a></li>
-				<li><a href="#sent" onclick="loadEmailPrevs(this,sentEmails)">Sent Mail</a></li>
-				<li><a href="#draft" onclick="loadEmailPrevs(this,draftEmails)">Drafts</a></li>
-				<li><a href="#archived" onclick="loadEmailPrevs(this,archivedEmails)">Archived</a></li>
-				<li><a href="#spam" onclick="loadEmailPrevs(this,spamEmails)">Spam</a></li>
-				<li><a href="#trash" onclick="loadEmailPrevs(this,trashEmails)">Trash</a></li>
+				<li id="inbox"><a onclick="loadEmailPrevs('inbox',inboxEmails)" href="?inbox">Inbox</a></li>
+				<li id="starred"><a onclick="loadEmailPrevs('starred', starredEmails)" href="?starred" >Starred</a></li>
+				<li id="sent"><a onclick="loadEmailPrevs('sent', sentEmails)" href="?sent">Sent Mail</a></li>
+				<li id="draft"><a onclick="loadEmailPrevs('draft', draftEmails)" href="?draft">Drafts</a></li>
+				<li id="archived"><a onclick="loadEmailPrevs('archived', archivedEmails)" href="?archived">Archived</a></li>
+				<li id="spam"><a onclick="loadEmailPrevs('spam', spamEmails)" href="?spam">Spam</a></li>
+				<li id="trash"><a onclick="loadEmailPrevs('trash', trashEmails)" href="?trash">Trash</a></li>
 			</ul>
 		</div>
 
@@ -45,6 +45,9 @@
 					<p id="body">Content</p>
 				</div>
 			</div>
+		</div>
+
+		<div id="footer">
 		</div>
 	</div>
 </body>
