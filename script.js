@@ -1,5 +1,16 @@
+
 function init(){
     loadHeader();
+    if((window.location.href).includes("index.html")){
+        //sessionStorage.clear();
+        sessionStorage.setItem("inbox", "");
+        sessionStorage.setItem("starred", "");
+        sessionStorage.setItem("sent", "");
+        sessionStorage.setItem("draft", "");
+        sessionStorage.setItem("archived", "");
+        sessionStorage.setItem("spam", "");
+        sessionStorage.setItem("trash", "");
+    }
     if(window.location.search.substr(1) != ""){
         loadEmailPrevs(window.location.search.substr(1), eval(window.location.search.substr(1)+"Emails"));
     } else {
@@ -53,17 +64,29 @@ function openEmail(list, x){
     sender.innerHTML = list[x].sender;
     subject.innerHTML = "Subject: " + list[x].subject;
     email.innerHTML = list[x].text; 
-    list[x].visited = true;
+
+    //cache stuff to sessionStorage
+    var li = window.location.search.substr(1);
+    if(li != ""){
+        var vili = sessionStorage.getItem(li).split(",");
+    } else {
+        var vili = sessionStorage.inbox.split(",");
+    }
+    if(!vili.includes(x+"")){
+        vili.push(x+"");
+        sessionStorage.setItem(""+li, vili.toString());
+    }
+    console.log(sessionStorage);
+
     var row = document.getElementById("email-table").rows[x];
     row.classList.add("visited");
-    console.log(row.classList);
     //display modal
     modal.style.display = "block";
    
 }
 
 //generates the email of emailNum at certain rowNum in the table
-function generateEmailPrev(list, emailNum){
+function generateEmailPrev(list, emailNum, visited){
     var table = document.getElementById("email-table");
 
     var row = table.insertRow(emailNum);
@@ -81,6 +104,11 @@ function generateEmailPrev(list, emailNum){
     sender.innerHTML = emailObj.sender;
     subject.innerHTML = emailObj.subject;
     time.innerHTML = emailObj.time;
+
+    if (visited){
+
+        row.classList.add("visited");
+    }
 }
 
 function loadEmailPrevs(str, list){
@@ -94,16 +122,31 @@ function loadEmailPrevs(str, list){
     if(currActive.length != 0){
         currActive[0].classList.remove("active");
     }
-    console.log(document.getElementById(str));
     document.getElementById(str).className = "active";
     
     tableParent.append(newTable);
 
+    if(window.location.search.substr(1) != ""){
+        var thing = window.location.search.substr(1);
+    } else {
+        var thing = "inbox";
+    } 
+    var visited;
     for(var i = 0; i < list.length; i++){
-        generateEmailPrev(list, i);
+        visited = hasVisited(thing, i+"");
+        generateEmailPrev(list, i, visited);
+        
     }
 }
 
+function hasVisited(listName, num){
+    var listString = sessionStorage.getItem(listName);
+    var vilist = listString.split(",");
+    if (vilist.includes(num+"")){
+        return true;
+    }
+    return false;
+}
 
 function closeEmail(){
     var modal = document.getElementById("myModal");
