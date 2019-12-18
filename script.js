@@ -2,7 +2,7 @@
 function init(){
     loadHeader();
     if((window.location.href).includes("index.html")){
-        //sessionStorage.clear();
+        //reset sessionStorage
         sessionStorage.setItem("inbox", "");
         sessionStorage.setItem("starred", "");
         sessionStorage.setItem("sent", "");
@@ -10,29 +10,21 @@ function init(){
         sessionStorage.setItem("archived", "");
         sessionStorage.setItem("spam", "");
         sessionStorage.setItem("trash", "");
+        sessionStorage.setItem("emailsVisited", "0");
     }
     if(window.location.search.substr(1) != ""){
         loadEmailPrevs(window.location.search.substr(1), eval(window.location.search.substr(1)+"Emails"));
     } else {
-        
         loadEmailPrevs('inbox', inboxEmails)
     }
-    generateFooter();
-}
 
-function createBanner(){
-    var banner = document.createElement("div");
-    banner.id = "banner-notif";
-    var bannerText = document.createTextNode(`Showing archived inbox from 
-    09/01/19 to termination. You are able to view messages, 
-    but emails cannot be sent out.`);
-    banner.appendChild(bannerText);
-
-    document.body.insertBefore(banner, document.body.firstChild);
+    if(sessionStorage.getItem("emailsVisited") == "0"){
+        var banner = document.getElementById("banner-notif");
+        banner.style.display = "block";
+    }
 }
 
 function loadHeader(){
-
     document.getElementById("email-header").innerHTML = 
         "<h1 id=\"logo\"><a href = \"inbox.html\">EMAIL</a></h1>"
         + "<div class=\"search-container\">"
@@ -42,13 +34,10 @@ function loadHeader(){
         + "</form></div>";
 }
 
-
-function generateFooter(){
-    var footer = document.getElementById("footer");
-    footer.innerHTML = "Use the search box or search options to find messages quickly! <br>"
-    +"You are currently using 4829 MB (31%) of your 15360 MB <br>"
-    + "<a href=\"index.html\"> Back to the Landing Page</a>";
-} 
+function gotIt(){
+    var banner = document.getElementById("banner-notif");
+    banner.style.display = "none";
+}
 
 //takes int x and opens corresponding email
 function openEmail(list, x){
@@ -61,8 +50,9 @@ function openEmail(list, x){
     var email = document.getElementById("body");
 
     emailAddress.innerHTML = list[x].senderEmail;
+    console.log(list[x].sender);
     sender.innerHTML = list[x].sender;
-    subject.innerHTML = "Subject: " + list[x].subject;
+    subject.innerHTML = list[x].subject;
     email.innerHTML = list[x].text; 
 
     //cache stuff to sessionStorage
@@ -71,10 +61,13 @@ function openEmail(list, x){
         var vili = sessionStorage.getItem(li).split(",");
     } else {
         var vili = sessionStorage.inbox.split(",");
+        li = "inbox";
     }
     if(!vili.includes(x+"")){
-        vili.push(x+"");
-        sessionStorage.setItem(""+li, vili.toString());
+        vili.push(x);
+        sessionStorage.setItem(li, vili.toString());
+        var emailsVisited = parseInt(sessionStorage.getItem("emailsVisited"));
+        sessionStorage.setItem("emailsVisited", emailsVisited+1);
     }
     console.log(sessionStorage);
 
@@ -92,6 +85,9 @@ function generateEmailPrev(list, emailNum, visited){
     var row = table.insertRow(emailNum);
     row.className = "email-prev";
     row.onclick= function() {openEmail(list, emailNum)};
+    if (visited){
+        row.classList.add("visited");
+    }
 
     var sender = row.insertCell(0);
     sender.className="from";
@@ -101,30 +97,29 @@ function generateEmailPrev(list, emailNum, visited){
     time.className = "time";
 
     var emailObj = list[emailNum];
+    
     sender.innerHTML = emailObj.sender;
     subject.innerHTML = emailObj.subject;
     time.innerHTML = emailObj.time;
 
-    if (visited){
-
-        row.classList.add("visited");
-    }
 }
 
 function loadEmailPrevs(str, list){
     //clear original table
+    console.log(sessionStorage);
     var tableParent = document.getElementById("email-table").parentElement;
     tableParent.removeChild(document.getElementById("email-table"));
     var newTable = document.createElement("table");
     newTable.id = "email-table";
+    tableParent.append(newTable);
 
     var currActive = document.getElementsByClassName("active");
     if(currActive.length != 0){
+        currActive[0].firstChild.style.color = "navy";
         currActive[0].classList.remove("active");
     }
+    document.getElementById(str).firstChild.style.color = "white";
     document.getElementById(str).className = "active";
-    
-    tableParent.append(newTable);
 
     if(window.location.search.substr(1) != ""){
         var thing = window.location.search.substr(1);
@@ -134,11 +129,13 @@ function loadEmailPrevs(str, list){
     var visited;
     for(var i = 0; i < list.length; i++){
         visited = hasVisited(thing, i+"");
+        console.log(visited);
         generateEmailPrev(list, i, visited);
         
     }
 }
 
+//checks if email has been visited
 function hasVisited(listName, num){
     var listString = sessionStorage.getItem(listName);
     var vilist = listString.split(",");
@@ -174,20 +171,6 @@ inboxEmails.push({
     {greteSa@email.com}.
     `
 });
-
-/*inboxEmails.push({
-    senderEmail: "greteSa@email.com",
-    sender: "Grete Samsa",
-    subject: "Deepest Regrets",
-    time: "09/26/19",
-    text: `Gregor, <br> <br>
-    I hope this email finds you well. I've slept poorly since you have run
-    away from home. I don't know if you still 
-    check your inbox, or if you even still have your computer.
-    I'm sorry. I hope you're okay.
-
-    <br><br> Love, <br> Grete`
-});*/
 
 inboxEmails.push({
     senderEmail: "brandonTheMan@email.com",

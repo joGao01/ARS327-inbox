@@ -28,6 +28,7 @@ body {
 	margin: 0;
 	padding: 0;
 	/*font-size: 3vh; */
+	background-color: lightgray;
 }
 
 /*Landing Page CSS*/
@@ -63,13 +64,21 @@ body {
 }
 
 #banner-notif{
-	/*height: 4vh; */
-	min-height: 20px;
-	max-height: 20px;
-	padding: 7px;
 	background-color: orange;
 	color: black;
-	overflow: hidden;
+	padding: 0 1vh;
+	display: none;
+}
+
+#banner-notif p{
+	width: 90%;
+	display: inline-block;
+	padding: 0;
+	margin: 0;
+}
+
+#banner-notif button{
+	display: inline-block;
 }
 
 #footer {
@@ -87,7 +96,7 @@ body {
 
 #email-header #logo a{
 	text-decoration: none;
-	color: black;
+	color: navy;
 }
 
 #email-header .search-container{
@@ -133,21 +142,25 @@ body {
 	padding-left: 10px;
 }
 
-#nav-column .active {
-	background-color: #9FCCFF;
+.active {
+	background-color: navy;
+	color: white;
 }
 
 #emails {
 	width: auto;
 	float: left;
-	border-top: 25px solid #9FCCFF;
-	border-left: 10px solid #9FCCFF;
-	border-bottom: 25px solid #9FCCFF;
+	border-top: 25px solid navy;
+	border-left: 10px solid navy;
+	border-bottom: 25px solid navy;
 	grid-area: emails;
 }
 
+/************ email prev stuff ***************/
 table {
 	width: 100%;
+	background-color: white;
+	margin-bottom: 0;
 }
 
 table, tr, td{
@@ -160,7 +173,7 @@ table, tr, td{
 }
 
 .visited {
-	background-color: lightblue;
+	background-color: lightgray;
 }
 
 /*.email-prev:visited {
@@ -183,8 +196,7 @@ table, tr, td{
 	padding-right: 10px;
 }
 
-
-
+/********************Modal CSS********************/
 /*pulled from w3schools*/
 .modal {
 	display: none; /* Hidden by default */
@@ -199,10 +211,14 @@ table, tr, td{
 	background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 }
 
+.modal #blue-strip{
+	background-color: navy;
+}
+
 #modal-content {
-	background-color: #fefefe;
+	background-color: lightgray;
 	margin: 10% auto; /* 15% from the top and centered */
-	padding: 20px;
+	padding: 10px 10px;
 	border: 1px solid #888;
 	width: 60%; /* Could be more or less, depending on screen size */
 }
@@ -211,7 +227,13 @@ table, tr, td{
 #modal-content #back-link{
 	font-size: 10px;
 	text-decoration: underline;
-	color: blue;
+	color: white;
+	text-align: right;
+
+}
+
+#email, #sender, #subject, #body{
+	background-color:white;
 }
 
 #modal-content #email{
@@ -221,4 +243,14 @@ table, tr, td{
 
 #modal-content #sender{
 	line-height: 10px;
+}
+
+#modal-content #subject{
+	display: inline-block;
+	padding: 0 1vh;
+}
+
+#modal-content #body{
+	padding: 0 1vh;
+
 }
