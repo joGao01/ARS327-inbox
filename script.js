@@ -48,11 +48,13 @@ function openEmail(list, x){
    // var emailAddress = document.getElementById("email");
     var sender = document.getElementById("sender");
     var subject = document.getElementById("subject");
+    var to = document.getElementById("to");
     var email = document.getElementById("body");
 
    // emailAddress.innerHTML = list[x].senderEmail;
     console.log(list[x].sender);
     sender.innerHTML = list[x].sender + " (" + list[x].senderEmail + ")";
+    to.innerHTML = list[x].to + " (" + list[x].toemail + ")";
     subject.innerHTML = list[x].subject;
     email.innerHTML = list[x].text; 
 
@@ -158,6 +160,8 @@ inboxEmails.push({
     senderEmail: "auto-noreply@email.com",
     sender: "System Notification",
     subject: "[IMPORTANT] Notification of Inbox Termination",
+    to: "Gregor Samsa",
+    toemail : "gregor.Samsa@amazoff.com",
     time: "8:43AM",
     text: `Gregor Samsa, <br> <br>
     This is an auto-generated notification email to let you know that 
@@ -177,6 +181,8 @@ inboxEmails.push({
     senderEmail: "brandonTheMan@email.com",
     sender: "Brandon TheMan",
     subject: "RE: Concerning your Graigslist Listing",
+    to: "Gregor Samsa",
+    toemail : "gregor.Samsa@amazoff.com",
     time: "09/16/19",
     text: `Good morning Gregor, <br><br>
     Hey, this is a follow up email about your Graigslist listing. Could you 
@@ -188,6 +194,8 @@ inboxEmails.push({
 inboxEmails.push({
     senderEmail: "greteSa@email.com",
     sender: "Grete Samsa",
+    to: "Gregor Samsa",
+    toemail : "gregor.Samsa@amazoff.com",
     subject: "RE:Furniture",
     time: "09/15/19",
     text: `We have to find a way to pay the bills too. We're
@@ -197,6 +205,8 @@ inboxEmails.push({
 inboxEmails.push({
     senderEmail: "brandonTheMan@email.com",
     sender: "Brandon TheMan",
+    to: "Gregor Samsa",
+    toemail : "gregor.Samsa@amazoff.com",
     subject: "Concerning your Graigslist Listing",
     time: "09/15/19",
     text: `Good morning Gregor, <br><br>
@@ -208,6 +218,8 @@ inboxEmails.push({
 inboxEmails.push({
     senderEmail: "auto-noreply@email.com",
     sender: "System Announcement",
+    to: "Gregor Samsa",
+    toemail : "gregor.Samsa@amazoff.com",
     subject: "[IMPORTANT] Termination of Inbox in Two Weeks",
     time: "09/13/19",
     text: `Hello Gregor, <br><br>
@@ -226,6 +238,8 @@ inboxEmails.push({
 inboxEmails.push({
     senderEmail: "jefe.bezos@amazoff.com",
     sender: "Jefe Bezos",
+    to: "Gregor Samsa",
+    toemail : "gregor.Samsa@amazoff.com",
     subject: "RE:RE Extended Time Off",
     time: "09/13/19",
     text: `Gregor <br> <br>
@@ -236,6 +250,8 @@ inboxEmails.push({
 inboxEmails.push({
     senderEmail: "Jefe.Bezos@amazoff.com",
     sender: "Jefe Bezos",
+    to: "Gregor Samsa",
+    toemail : "gregor.Samsa@amazoff.com",
     subject: "Extended Time Off",
     time: "09/13/19",
     text: `Hello Gregor, <br> <br>
@@ -253,6 +269,8 @@ inboxEmails.push({
 inboxEmails.push({
     senderEmail: "Sal.Lami@eyebm.com",
     sender: "Sal Lami",
+    to: "Gregor Samsa",
+    toemail : "gregor.Samsa@amazoff.com",
     subject: "RE:RE: About out Collaboration",
     time: "09/10/19",
     text: `Hi Gregor, <br> <br>
@@ -264,6 +282,8 @@ inboxEmails.push({
 inboxEmails.push({
     senderEmail: "greteSa@email.com",
     sender: "Grete Samsa",
+    to: "Gregor Samsa",
+    toemail : "gregor.Samsa@amazoff.com",
     subject: "RE: Forgot my lunch",
     time: "09/10/19",
     text: `
@@ -274,6 +294,8 @@ inboxEmails.push({
 inboxEmails.push({
     senderEmail: "Sal.Lami@eyebm.com",
     sender: "Sal Lami",
+    to: "Gregor Samsa",
+    toemail : "gregor.Samsa@amazoff.com",
     subject: "About out Collaboration",
     time: "09/10/19",
     text: `Hi Gregor, <br> <br>
@@ -291,6 +313,8 @@ inboxEmails.push({
 inboxEmails.push({
     senderEmail: "greteSa@email.com",
     sender: "Grete Samsa",
+    to: "Gregor Samsa",
+    toemail : "gregor.Samsa@amazoff.com",
     subject: "RE:RE: I heard about last night",
     time: "09/07/19",
     text: `Hey, <br> <br>
@@ -303,6 +327,8 @@ inboxEmails.push({
 inboxEmails.push({
     senderEmail: "greteSa@email.com",
     sender: "Grete Samsa",
+    to: "Gregor Samsa",
+    toemail : "gregor.Samsa@amazoff.com",
     subject: "I heard about last night",
     time: "09/07/19",
     text: `Hey, <br> <br>
@@ -316,6 +342,8 @@ inboxEmails.push({
 inboxEmails.push({
     senderEmail: "employee-notification@amazoff.com",
     sender: "Amazoff Announcements",
+    to: "Gregor Samsa",
+    toemail : "gregor.Samsa@amazoff.com",
     subject: "Announcement",
     time: "09/07/19",
     text: `Hello Amazoff Family, <br> <br>
@@ -331,6 +359,8 @@ inboxEmails.push({
 inboxEmails.push({
     senderEmail: "Jefe.Bezos@amazoff.com",
     sender: "Jefe Bezos",
+    to: "Gregor Samsa",
+    toemail : "gregor.Samsa@amazoff.com",
     subject: "Continued Employment",
     time: "09/05/19",
     text: `Hello Gregor, <br> <br>
@@ -344,6 +374,8 @@ inboxEmails.push({
 inboxEmails.push({
     senderEmail: "rosaline@email.edu", 
     sender: "Rosa Line",
+    to: "Gregor Samsa",
+    toemail : "gregor.Samsa@amazoff.com",
     subject: "Concerning the news",
     time: "09/05/12",
     text: `Hi Gregor, <br> <br>
@@ -358,6 +390,8 @@ inboxEmails.push({
 inboxEmails.push({
     senderEmail: "Devon.Russo@amazoff.com",
     sender: "Devon Russo",
+    to: "Gregor Samsa",
+    toemail : "gregor.Samsa@amazoff.com",
     subject: "Hey man",
     time: "09/04/19",
     text: ` Hey man, <br><br>
@@ -372,6 +406,8 @@ inboxEmails.push({
 inboxEmails.push({
     senderEmail: "greteSa@email.com",
     sender: "Grete Samsa",
+    to: "Gregor Samsa",
+    toemail : "gregor.Samsa@amazoff.com",
     subject: "Lunch",
     time: "09/04/19",
     text: `Hey Gregor, <br> <br>
@@ -387,6 +423,8 @@ inboxEmails.push({
 inboxEmails.push({
     senderEmail: "Jefe.Bezos@amazoff.com",
     sender: "Jefe Bezos",
+    to: "Gregor Samsa",
+    toemail : "gregor.Samsa@amazoff.com",
     subject: "Emergency Meeting Tomorrow",
     time: "09/03/19",
     text: `Hello, <br> <br>
@@ -399,6 +437,8 @@ inboxEmails.push({
 inboxEmails.push({
     senderEmail: "SamStanley@vector.com",
     sender: "Samuel Stanley",
+    to: "Gregor Samsa",
+    toemail : "gregor.Samsa@amazoff.com",
     subject: "Reaching out about marketing",
     time: "09/01/19",
     text: `Hello Gregor, <br> <br>
@@ -417,6 +457,8 @@ var starredEmails = [];
 starredEmails.push({
     senderEmail: "Jefe.Bezos@amazoff.com",
     sender: "Jefe Bezos",
+    to: "Gregor Samsa",
+    toemail : "gregor.Samsa@amazoff.com",
     subject: "Continued Employment",
     time: "09/05/19",
     text: `Hello Gregor, <br> <br>
@@ -432,8 +474,10 @@ starredEmails.push({
 var draftEmails = [];
 
 draftEmails.push({
-    senderEmail: "From: gregor.samsa@amazoff.com",
-    sender: "To: Grete Samsa",
+    senderEmail: "gregor.samsa@amazoff.com",
+    sender: "Gregor Samsa",
+    to: "Grete Samsa",
+    toemail : "greteSa@email.com",
     subject: "(unsent)",
     time: "09/25/19",
     text: `
@@ -446,8 +490,10 @@ draftEmails.push({
 });
 
 draftEmails.push({
-    senderEmail: "From: gregor.samsa@amazoff.com",
-    sender: "To: Grete Samsa",
+    senderEmail: "gregor.samsa@amazoff.com",
+    sender: "Gregor Samsa",
+    to: "Grete Samsa",
+    toemail : "greteSa@email.com",
     subject: "(unsent)",
     time: "09/24/19",
     text: `
@@ -459,8 +505,10 @@ draftEmails.push({
 });
 
 draftEmails.push({
-    senderEmail: "From: gregor.samsa@amazoff.com",
-    sender: "To: Grete Samsa",
+    senderEmail: "gregor.samsa@amazoff.com",
+    sender: "Gregor Samsa",
+    to: "Grete Samsa",
+    toemail : "greteSa@email.com",
     subject: "(unsent)",
     time: "09/22/19",
     text: `
@@ -471,8 +519,10 @@ draftEmails.push({
 });
 
 draftEmails.push({
-    senderEmail: "From: gregor.samsa@amazoff.com",
-    sender: "To: Grete Samsa",
+    senderEmail: "gregor.samsa@amazoff.com",
+    sender: "Gregor Samsa",
+    to: "Grete Samsa",
+    toemail : "greteSa@email.com",
     subject: "(unsent)",
     time: "09/22/19",
     text: `
@@ -483,8 +533,10 @@ draftEmails.push({
 });
 
 draftEmails.push({
-    senderEmail: "From: gregor.samsa@amazoff.com",
-    sender: "To: Grete Samsa",
+    senderEmail: "gregor.samsa@amazoff.com",
+    sender: "Gregor Samsa",
+    to: "Grete Samsa",
+    toemail : "greteSa@email.com",
     subject: "Sorry (unsent)",
     time: "09/21/19",
     text: `
@@ -495,8 +547,10 @@ draftEmails.push({
 });
 
 draftEmails.push({
-    senderEmail: "From: gregor.samsa@amazoff.com",
-    sender: "To: Grete Samsa",
+    senderEmail: "gregor.samsa@amazoff.com",
+    sender: "Gregor Samsa",
+    to: "Grete Samsa",
+    toemail : "greteSa@email.com",
     subject: "Sorry (unsent)",
     time: "09/20/19",
     text: `Grete. <br> <br>
@@ -509,8 +563,10 @@ draftEmails.push({
 });
 
 draftEmails.push({
-    senderEmail: "From: gregor.samsa@amazoff.com",
-    sender: "To: Brandon TheMan",
+    senderEmail: "gregor.samsa@amazoff.com",
+    sender: "Gregor Samsa",
+    to: "Brandon TheMan",
+    toemail : "brandon.TheMan@amazoff.com",
     subject: "RE:RE: Concerning your Graigslist Listing (unsent)",
     time: "09/16/19",
     text: `
@@ -518,8 +574,10 @@ draftEmails.push({
 });
 
 draftEmails.push({
-    senderEmail: "From: gregor.samsa@amazoff.com",
-    sender: "To: Grete Samsa",
+    senderEmail: "gregor.samsa@amazoff.com",
+    sender: "Gregor Samsa",
+    to: "Grete Samsa",
+    toemail : "greteSa@email.com",
     subject: "Furniture (unsent)",
     time: "09/15/19",
     text: `Grete. <br> <br>
@@ -530,8 +588,10 @@ draftEmails.push({
 });
 
 draftEmails.push({
-    senderEmail: "From: gregor.samsa@amazoff.com",
-    sender: "To: Grete Samsa",
+    senderEmail: "gregor.samsa@amazoff.com",
+    sender: "Gregor Samsa",
+    to: "Grete Samsa",
+    toemail : "greteSa@email.com",
     subject: "Furmuture (unsent)",
     time: "09/15/19",
     text: `Grete. <br> <br>
@@ -540,8 +600,10 @@ draftEmails.push({
 });
 
 draftEmails.push({
-    senderEmail: "From: gregor.samsa@amazoff.com",
-    sender: "To: Grete Samsa",
+    senderEmail: "gregor.samsa@amazoff.com",
+    sender: "Gregor Samsa",
+    to: "Grete Samsa",
+    toemail : "greteSa@email.com",
     subject: "Furmuture (unsent)",
     time: "09/15/19",
     text: `Grete. <br> <br>
@@ -550,8 +612,10 @@ draftEmails.push({
 });
 
 draftEmails.push({
-    senderEmail: "From: gregor.samsa@amazoff.com",
-    sender: "To: Grete Samsa",
+    senderEmail: "gregor.samsa@amazoff.com",
+    sender: "Gregor Samsa",
+    to: "Grete Samsa",
+    toemail : "greteSa@email.com",
     subject: "RE:RE:Forgot my lunch (unsent)",
     time: "09/10/19",
     text: `
@@ -561,8 +625,10 @@ draftEmails.push({
 });
 
 draftEmails.push({
-    senderEmail: "From: gregor.samsa@amazoff.com",
-    sender: "To: Grete Samsa",
+    senderEmail: "gregor.samsa@amazoff.com",
+    sender: "Gregor Samsa",
+    to: "Grete Samsa",
+    toemail : "greteSa@email.com",
     subject: "RE: I heard about last night (unsent)",
     time: "09/07/19",
     text: `Grete <br> <br>
@@ -571,8 +637,10 @@ draftEmails.push({
 });
 
 draftEmails.push({
-    senderEmail: "From: gregor.samsa@amazoff.com",
-    sender: "To: Grete Samsa",
+    senderEmail: "gregor.samsa@amazoff.com",
+    sender: "Gregor Samsa",
+    to: "Grete Samsa",
+    toemail : "greteSa@email.com",
     subject: "RE: I heard about last night (unsent)",
     time: "09/07/19",
     text: `Grete <br> <br>
@@ -583,8 +651,10 @@ draftEmails.push({
 });
 
 draftEmails.push({
-    senderEmail: "From: gregor.samsa@amazoff.com",
-    sender: "To: Rosa Line",
+    senderEmail: "gregor.samsa@amazoff.com",
+    sender: "Gregor Samsa",
+    to: "Rosa Line",
+    toemail : "rosaline@email.com",
     subject: "RE: Concerning the news (unsent)",
     time: "09/05/19",
     text: `Rosa, <br> <br>
@@ -593,8 +663,10 @@ draftEmails.push({
 });
 
 draftEmails.push({
-    senderEmail: "From: gregor.samsa@amazoff.com",
-    sender: "To: Rosa Line",
+    senderEmail: "gregor.samsa@amazoff.com",
+    sender: "Gregor Samsa",
+    to: "Rosa Line",
+    toemail : "rosaline@email.com",
     subject: "RE: Concerning the news (unsent)",
     time: "09/05/19",
     text: `Rosa, <br> <br>
@@ -603,8 +675,10 @@ draftEmails.push({
 });
 
 draftEmails.push({
-    senderEmail: "From: gregor.samsa@amazoff.com",
-    sender: "To: Jefe Bezos",
+    senderEmail: "gregor.samsa@amazoff.com",
+    sender: "Gregor Samsa",
+    to: "Jefe Bezos",
+    toemail: "Jefe.Bezos@amazoff.com",
     subject: "RE: Emergency Meeting Tomorrow (unsent)",
     time: "02/04/19",
     text: `Mr. Bezos <br> <br>
@@ -615,8 +689,10 @@ draftEmails.push({
 });
 
 draftEmails.push({
-    senderEmail: "From: gregor.samsa@amazoff.com",
-    sender: "To: Jefe Bezos",
+    senderEmail: "gregor.samsa@amazoff.com",
+    sender: "Gregor Samsa",
+    to: "Jefe Bezos",
+    toemail: "Jefe.Bezos@amazoff.com",
     subject: "RE: Emergency Meeting Tomorrow (unsent)",
     time: "02/04/19",
     text: `Mr. Bezos <br> <br>
@@ -625,8 +701,10 @@ draftEmails.push({
 });
 
 draftEmails.push({
-    senderEmail: "From: gregor.samsa@amazoff.com",
-    sender: "To: Jefe Bezos",
+    senderEmail: "gregor.samsa@amazoff.com",
+    sender: "Gregor Samsa",
+    to: "Jefe Bezos",
+    toemail: "Jefe.Bezos@amazoff.com",
     subject: "Unable to go to Work (unsent)",
     time: "02/04/19",
     text: `Mr. Bezos <br> <br>
@@ -640,8 +718,10 @@ draftEmails.push({
 var sentEmails = [];
 
 sentEmails.push({
-    senderEmail: "From: gregor.samsa@amazoff.com",
-    sender: "To: Grete Samsa",
+    senderEmail: "gregor.samsa@amazoff.com",
+    sender: "Gregor Samsa",
+    to: "Grete Samsa",
+    toemail : "greteSa@email.com",
     subject: "goodbye",
     time: "09/20/19",
     text: `Grete <br> <br>
@@ -652,8 +732,10 @@ sentEmails.push({
 });
 
 sentEmails.push({
-    senderEmail: "From: gregor.samsa@amazoff.com",
-    sender: "To: Grete Samsa",
+    senderEmail: "gregor.samsa@amazoff.com",
+    sender: "Gregor Samsa",
+    to: "Grete Samsa",
+    toemail : "greteSa@email.com",
     subject: "RE:RE:Furniture",
     time: "09/15/19",
     text: `Grete. <br> <br>
@@ -662,8 +744,10 @@ sentEmails.push({
 });
 
 sentEmails.push({
-    senderEmail: "From: gregor.samsa@amazoff.com",
-    sender: "To: Grete Samsa",
+    senderEmail: "gregor.samsa@amazoff.com",
+    sender: "Gregor Samsa",
+    to: "Grete Samsa",
+    toemail : "greteSa@email.com",
     subject: "Furniture",
     time: "09/15/19",
     text: `greta <br> <br>
@@ -671,8 +755,10 @@ sentEmails.push({
 });
 
 sentEmails.push({
-    senderEmail: "From: gregor.samsa@amazoff.com",
-    sender: "To: Jefe Bezos",
+    senderEmail: "gregor.samsa@amazoff.com",
+    sender: "Gregor Samsa",
+    to: "Jefe Bezos",
+    toemail : "Jefe.Bezos@amazoff.com",
     subject: "RE: Extended Time Off",
     time: "09/13/19",
     text: `Mr. Bezos <br> <br>
@@ -681,8 +767,10 @@ sentEmails.push({
 });
 
 sentEmails.push({
-    senderEmail: "From: gregor.samsa@amazoff.com",
-    sender: "To: Grete Samsa",
+    senderEmail: "gregor.samsa@amazoff.com",
+    sender: "Gregor Samsa",
+    to: "Grete Samsa",
+    toemail : "greteSa@email.com",
     subject: "Forgot my lunch",
     time: "09/10/19",
     text: `
@@ -691,8 +779,10 @@ sentEmails.push({
 });
 
 sentEmails.push({
-    senderEmail: "From: gregor.samsa@amazoff.com",
-    sender: "To: Sal Lami",
+    senderEmail: "gregor.samsa@amazoff.com",
+    sender: "Gregor Samsa",
+    to: "Sal Lami",
+    toemail: "sal.lami@eyebm.com",
     subject: "RE: About our Collaboration",
     time: "09/10/19",
     text: `Hi Sal, <br> <br>
@@ -703,8 +793,10 @@ sentEmails.push({
 });
 
 sentEmails.push({
-    senderEmail: "From: gregor.samsa@amazoff.com",
-    sender: "To: Grete Samsa",
+    senderEmail: "gregor.samsa@amazoff.com",
+    sender: "Gregor Samsa",
+    to: "Grete Samsa",
+    toemail : "greteSa@email.com",
     subject: "RE: I heard about last night",
     time: "09/07/19",
     text: `Greta <br> <br>
@@ -714,8 +806,10 @@ sentEmails.push({
 });
 
 sentEmails.push({
-    senderEmail: "From: gregor.samsa@amazoff.com",
-    sender: "To: Rosa Line",
+    senderEmail: "gregor.samsa@amazoff.com",
+    sender: "Gregor Samsa",
+    to: "Rosa Line",
+    toemail: "rosaline@email.com",
     subject: "RE: Concerning the news",
     time: "09/05/19",
     text: `Rosa, <br> <br>
@@ -724,8 +818,10 @@ sentEmails.push({
 });
 
 sentEmails.push({
-    senderEmail: "From: gregor.samsa@amazoff.com",
-    sender: "To: Devon Ross",
+    senderEmail: "gregor.samsa@amazoff.com",
+    sender: "Gregor Samsa",
+    to : "Devon Ross",
+    toemail: "Devon.Ross@amazoff.com",
     subject: "RE: Hey man",
     time: "09/04/19",
     text: `Devon, <br> <br>
@@ -735,8 +831,10 @@ sentEmails.push({
 });
 
 sentEmails.push({
-    senderEmail: "From: gregor.samsa@amazoff.com",
-    sender: "To: Grete Samsa",
+    senderEmail: "gregor.samsa@amazoff.com",
+    sender: "Gregor Samsa",
+    to: "Grete Samsa",
+    toemail : "greteSa@email.com",
     subject: "RE: Lunch",
     time: "09/04/19",
     text: `Grete, <br> <br>
@@ -745,8 +843,10 @@ sentEmails.push({
 });
 
 sentEmails.push({
-    senderEmail: "From: gregor.samsa@amazoff.com",
-    sender: "To: Jefe Bezos",
+    senderEmail: "gregor.samsa@amazoff.com",
+    sender: "Gregor Samsa",
+    to: "Jefe Bezos",
+    toemail : "Jefe.Bezos@amazoff.com",
     subject: "RE: Emergency Meeting Tomorrow",
     time: "09/03/19",
     text: `Mr. Bezos <br> <br>
@@ -756,8 +856,10 @@ sentEmails.push({
 });
 
 sentEmails.push({
-    senderEmail: "From: gregor.samsa@amazoff.com",
-    sender: "To: Jefe Bezos",
+    senderEmail: "gregor.samsa@amazoff.com",
+    sender: "Gregor Samsa",
+    to: "Jefe Bezos",
+    toemail : "Jefe.Bezos@amazoff.com",
     subject: "Unable to make it to work today",
     time: "09/03/19",
     text: `mr. Bezos <br> <br>
@@ -769,8 +871,10 @@ sentEmails.push({
 });
 
 sentEmails.push({
-    senderEmail: "From: gregor.samsa@amazoff.com",
-    sender: "To: Samuel Stanley",
+    senderEmail: "gregor.samsa@amazoff.com",
+    sender: "Gregor Samsa",
+    to: "Samuel Stanley",
+    toemail: "SamStanley@vector.com",
     subject: "RE: Reaching out about marketing",
     time: "09/02/19",
     text: `Mr. Stanley <br> <br>
@@ -786,6 +890,8 @@ var archivedEmails = [];
 archivedEmails.push({
     senderEmail: "jefe.bezos@email.com",
     sender: "Jefe Bezos",
+    to: "Gregor Samsa",
+    toemail: "gregor.Samsa@amazoff.com",
     subject: "Fwd: Concerning Gregor's Unique Condition",
     time: "09/03/19",
     text: `
@@ -805,6 +911,8 @@ var spamEmails = [];
 spamEmails.push({
     senderEmail: "no-reply@spam.com",
     sender: "Migraine Relief",
+    to: "Gregor Samsa",
+    toemail : "gregor.Samsa@amazoff.com",
     subject: "Destroy your migraines once and for all!",
     time: "09/17/19",
     text: `
@@ -820,6 +928,8 @@ spamEmails.push({
 spamEmails.push({
     senderEmail: "no-reply@trillo.com",
     sender: "Trillo",
+    to: "Gregor Samsa",
+    toemail : "gregor.Samsa@amazoff.com",
     subject: "Get Trillo for Work!",
     time: "09/17/19",
     text: `
@@ -835,6 +945,8 @@ spamEmails.push({
 spamEmails.push({
     senderEmail: "mail@mail.adabe.com",
     sender: "Adabe Creative Cloud",
+    to: "Gregor Samsa",
+    toemail : "gregor.Samsa@amazoff.com",
     subject: "The power of the paintbrush",
     time: "09/15/19",
     text: `something something advertisement subscription model
@@ -846,6 +958,8 @@ spamEmails.push({
 spamEmails.push({
     senderEmail: "no-reply@trillo.com",
     sender: "Trillo",
+    to: "Gregor Samsa",
+    toemail : "gregor.Samsa@amazoff.com",
     subject: "Get Trillo for Work!",
     time: "09/12/19",
     text: `
@@ -861,6 +975,8 @@ spamEmails.push({
 spamEmails.push({
     senderEmail: "mail@mail.adabe.com",
     sender: "Adabe Creative Cloud",
+    to: "Gregor Samsa",
+    toemail : "gregor.Samsa@amazoff.com",
     subject: "The power of the paintbrush",
     time: "09/09/19",
     text: `something something advertisement subscription model
@@ -872,6 +988,8 @@ spamEmails.push({
 spamEmails.push({
     senderEmail: "info@mail.trianhr.com",
     sender: "Dress Codes For the.",
+    to: "Gregor Samsa",
+    toemail : "gregor.Samsa@amazoff.com",
     subject: "Piercings, Tattoos, and More!",
     time: "09/07/19",
     text: `something something This webinar on Workplace Dress Codes 
@@ -883,6 +1001,8 @@ spamEmails.push({
 spamEmails.push({
     senderEmail: "mail@mail.adabe.com",
     sender: "Adabe Creative Cloud",
+    to: "Gregor Samsa",
+    toemail : "gregor.Samsa@amazoff.com",
     subject: "Save over 40% off on Creative Cloud",
     time: "09/04/19",
     text: `something something advertisement subscription model
@@ -894,6 +1014,8 @@ spamEmails.push({
 spamEmails.push({
     senderEmail: "mail@imagine.com",
     sender: "Imaginacao",
+    to: "Gregor Samsa",
+    toemail : "gregor.Samsa@amazoff.com",
     subject: "Get Inspired!",
     time: "09/03/19",
     text: `
@@ -906,6 +1028,8 @@ var trashEmails = [];
 trashEmails.push({
     senderEmail: "rosaline@email.com",
     sender: "Rosa Line",
+    to: "Gregor Samsa",
+    toemail : "gregor.Samsa@amazoff.com",
     subject: "Therapy Information (Trash)",
     time: "09/05/19",
     text: `Gregor, <br><br>

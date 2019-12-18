@@ -233,11 +233,12 @@ table, tr, td{
 
 }
 
-#sender, #subject, #body{
+#sender, #subject, #body, #to{
 	background-color:white;
 	border: 1px inset #888;
 	width: 100%;
 	box-sizing: border-box;
+	padding: 0 1vh;
 }
 
 #modal-content #sender{
@@ -246,7 +247,7 @@ table, tr, td{
 
 #modal-content #subject{
 	display: inline-block;
-	padding: 0 1vh;
+	
 }
 
 #modal-content #body{

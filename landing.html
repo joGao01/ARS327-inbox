@@ -38,17 +38,18 @@
 
 		<div id="landingModal" class="modal">
 			<div id="modal-content">
-				<h3 id="subject"><b>Archived Inbox of Gregor</b></h3>
-				<p id="sender">To: Jefe Bezos</p>
-				<p id="email">From: greteSa@email.com</p>
+				<div id="blue-strip"><p id="back-link" onclick="closeEmail() ">back</p></div>
+				<h3><b>Subject: </b><div id="subject">Archived Inbox of Gregor</div></h3>
+				<p style="margin:0;">From: <div id="sender">Grete Samsa (greteSa@email.com)</div></p>
+				<p style="margin:0;">To: <div id="to">Jefe Bezos</div></p>
 				<hr>
-				<p id="body">
+				<div id="body">
 					Mr. Bezos, <br><br>
 					I'm writing to confirm that I've received the archived inbox of
 					Gregor Samsa. Thank you, and I'm sorry.
 					<br><br>
 					Best, <br> Grete
-				</p>
+				</div>
 				<button onclick="location.href='inbox.html'">Continue to Archive</button>
 			</div>
 		</div>
