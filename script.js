@@ -44,7 +44,7 @@ function gotIt(){
 }
 
 //takes int x and opens corresponding email
-function openEmail(list, x){
+function openEmail(list, x, offset){
     //add error checking
     var modal = document.getElementById("myModal");
     
@@ -88,9 +88,9 @@ function openEmail(list, x){
         } 
         
     }
-    console.log(sessionStorage);
+    console.log("X", x);
 
-    var row = document.getElementById("email-table").rows[x];
+    var row = document.getElementById("email-table").rows[x-offset];
     row.classList.add("visited");
     //display modal
     modal.style.display = "block";
@@ -103,7 +103,7 @@ function generateEmailPrev(list, emailNum, visited, offset){
 
     var row = table.insertRow(emailNum - offset);
     row.className = "email-prev";
-    row.onclick= function() {openEmail(list, emailNum)};
+    row.onclick= function() {openEmail(list, emailNum, offset)};
     if (visited){
         row.classList.add("visited");
     }
