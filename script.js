@@ -22,7 +22,7 @@ function init(){
         loadEmailPrevs('inbox', inboxEmails)
     }
 
-    if(sessionStorage.getItem("emailsVisited") == "0"){
+    if(sessionStorage.getItem("emailsVisited") == "0" && (window.location.search.substr(1) == "" || window.location.search.substr(1) == "inbox")){
         var banner = document.getElementById("banner-notif");
         banner.style.display = "block";
     }
