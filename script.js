@@ -1,7 +1,7 @@
 
 function init(){
     loadHeader();
-    if((window.location.href).includes("index.html")){
+    if((window.location.href).toLowercase().includes("index.html")){
         //reset sessionStorage
         sessionStorage.setItem("inbox", "");
         sessionStorage.setItem("starred", "");
