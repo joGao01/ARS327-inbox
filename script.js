@@ -1,7 +1,7 @@
 
 function init(){
     loadHeader();
-    if((window.location.href).toLowerCase().includes("index.html")){
+    if((window.location.href).toLowerCase().includes("landing.html")){
         //reset sessionStorage
         sessionStorage.setItem("inbox", "");
         sessionStorage.setItem("starred", "");
@@ -12,6 +12,9 @@ function init(){
         sessionStorage.setItem("trash", "");
         sessionStorage.setItem("emailsVisited", "0");
         sessionStorage.setItem("initialSpam", "6");
+        sessionStorage.setItem("initialInbox", "1");
+    } else {
+        
     }
     if(window.location.search.substr(1) != ""){
         loadEmailPrevs(window.location.search.substr(1), eval(window.location.search.substr(1)+"Emails"));
@@ -71,6 +74,19 @@ function openEmail(list, x){
         sessionStorage.setItem(li, vili.toString());
         var emailsVisited = parseInt(sessionStorage.getItem("emailsVisited"));
         sessionStorage.setItem("emailsVisited", emailsVisited+1);
+        if((emailsVisited+1) % 10 == 0){
+            var initSpam = parseInt(sessionStorage.getItem("initialSpam"));
+            if (initSpam != 0){
+                sessionStorage.setItem("initialSpam", initSpam-1);
+            }
+        } 
+        if ((emailsVisited+1) % 2==0){
+            var initIn = parseInt(sessionStorage.getItem("initialInbox"));
+            if (initIn != 0){
+                sessionStorage.setItem("initialInbox", initIn-1);
+            }
+        } 
+        
     }
     console.log(sessionStorage);
 
@@ -82,10 +98,10 @@ function openEmail(list, x){
 }
 
 //generates the email of emailNum at certain rowNum in the table
-function generateEmailPrev(list, emailNum, visited){
+function generateEmailPrev(list, emailNum, visited, offset){
     var table = document.getElementById("email-table");
 
-    var row = table.insertRow(emailNum);
+    var row = table.insertRow(emailNum - offset);
     row.className = "email-prev";
     row.onclick= function() {openEmail(list, emailNum)};
     if (visited){
@@ -130,10 +146,20 @@ function loadEmailPrevs(str, list){
         var thing = "inbox";
     } 
     var visited;
-    for(var i = 0; i < list.length; i++){
+    if(str == "spam"){
+        var i = parseInt(sessionStorage.initialSpam);
+    } 
+    if (str == "inbox"){
+        var i = parseInt(sessionStorage.initialInbox);
+    }
+    else{
+        var i = 0;
+    }
+    var j = i;
+    for(i; i < list.length; i++){
         visited = hasVisited(thing, i+"");
         console.log(visited);
-        generateEmailPrev(list, i, visited);
+        generateEmailPrev(list, i, visited, j);
         
     }
 }
@@ -164,10 +190,7 @@ inboxEmails.push({
     toemail : "gregor.Samsa@amazoff.com",
     time: "8:43AM",
     text: `Gregor Samsa, <br> <br>
-    This is an auto-generated notification email to let you know that 
-    this inbox {gregor.samsa@amazoff.com} will be archived in 24 hours. It will no longer receive incoming
-    emails or be able to send outgoing mail. It is being archived at the
-    request of {Jefe Bezos} for the following reason:
+    This is an auto-generated notification email to let you know that this inbox {gregor.samsa@amazoff.com} is now archived. It will no longer be able to send outgoing mail, though incoming emails may still be received for the next 24 hours. It is being archived at the request of {Jefe Bezos} for the following reason:
 
     <br><br> Temination of Employment
     <br><br> Please take appropriate measures and proceed accordingly.
@@ -909,19 +932,53 @@ archivedEmails.push({
 var spamEmails = [];
 
 spamEmails.push({
+    senderEmail: "jo-reply@spam.com",
+    sender: "Artist Statement",
+    to: "Gregor Samsa",
+    toemail : "gregor.Samsa@amazoff.com",
+    subject: "Anyway I hope you enjoyed this thing",
+    time: "10:30AM",
+    text: `
+    Because I had a lot of fun :) <br>
+    please check out my inspiration at <a href="https://en.wikipedia.org/wiki/The_Metamorphosis" target="_blank">this link</a>
+    `
+});
+
+spamEmails.push({
+    senderEmail: "jo-reply@spam.com",
+    sender: "Artist Statement",
+    to: "Gregor Samsa",
+    toemail : "gregor.Samsa@amazoff.com",
+    subject: "How I made these things work despite a lack of a backend ",
+    time: "10:20AM",
+    text: `
+    Many, many interesting workarounds. <br>
+    My JS file is over 1000 lines long because I was too lazy to make separate JS or JSON files for these emails smh.
+    `
+});
+
+spamEmails.push({
+    senderEmail: "jo-reply@spam.com",
+    sender: "Artist Statement",
+    to: "Gregor Samsa",
+    toemail : "gregor.Samsa@amazoff.com",
+    subject: "This project was brought to you buy plenty of tears and suffering!",
+    time: "10:07AM",
+    text: `
+    JKJK It wasn't that bad, but I had a super duper wicked headache this morning that carried over from last night and almost couldn't finish the last part of this project! (Implementing emails that appeared as you explored) Overall, I thought this was really fun, and I really liked this class.
+    `
+});
+
+spamEmails.push({
     senderEmail: "no-reply@spam.com",
     sender: "Migraine Relief",
     to: "Gregor Samsa",
     toemail : "gregor.Samsa@amazoff.com",
     subject: "Destroy your migraines once and for all!",
-    time: "09/17/19",
+    time: "10:02AM",
     text: `
-    Discover these delightfully simple Trillo 
-    keyboard shortcuts and learn how new productivity highs 
-    are just a puff of a joint away.
-    If you have your eyes set on a new promotion or more 
-    responsibility at work, learn how to manage up to keep your
-    life from falling apart.
+    We here, your friends at the FBI, know that you have a migraine. 
+    Please get some rest.
     `
 });
 
@@ -931,7 +988,7 @@ spamEmails.push({
     to: "Gregor Samsa",
     toemail : "gregor.Samsa@amazoff.com",
     subject: "Get Trillo for Work!",
-    time: "09/17/19",
+    time: "9:45AM",
     text: `
     Discover these delightfully simple Trillo 
     keyboard shortcuts and learn how new productivity highs 
@@ -948,7 +1005,7 @@ spamEmails.push({
     to: "Gregor Samsa",
     toemail : "gregor.Samsa@amazoff.com",
     subject: "The power of the paintbrush",
-    time: "09/15/19",
+    time: "9:35AM",
     text: `something something advertisement subscription model
     please buy our insanely expensive products because your company
     forces you to use it. And also only several of our products are actually good
