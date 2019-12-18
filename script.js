@@ -148,17 +148,19 @@ function loadEmailPrevs(str, list){
     var visited;
     if(str == "spam"){
         var i = parseInt(sessionStorage.initialSpam);
-    } 
-    if (str == "inbox"){
-        var i = parseInt(sessionStorage.initialInbox);
+    } else {
+        if (str == "inbox"){
+            var i = parseInt(sessionStorage.initialInbox);
+        }
+        else{
+            var i = 0;
+        }
     }
-    else{
-        var i = 0;
-    }
+    
     var j = i;
+    console.log(j);
     for(i; i < list.length; i++){
         visited = hasVisited(thing, i+"");
-        console.log(visited);
         generateEmailPrev(list, i, visited, j);
         
     }
