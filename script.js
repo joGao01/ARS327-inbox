@@ -11,7 +11,7 @@ function init(){
         sessionStorage.setItem("spam", "");
         sessionStorage.setItem("trash", "");
         sessionStorage.setItem("emailsVisited", "0");
-        sessionStorage.setItem("initialSpam", "6");
+        sessionStorage.setItem("initialSpam", "5");
         sessionStorage.setItem("initialInbox", "1");
     } else {
         
