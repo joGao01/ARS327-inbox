@@ -109,12 +109,15 @@ body {
 }
 
 #email-header .search-container input{
-	width: 200px;
+	width: 300px;
 	padding: 0 10px;
+	height: 30px;
 }
 
 #email-header .search-container button{
 	margin-left: 10px;
+	height: 30px;
+
 }
 
 #nav-column {
