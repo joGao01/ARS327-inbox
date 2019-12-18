@@ -11,6 +11,7 @@ function init(){
         sessionStorage.setItem("spam", "");
         sessionStorage.setItem("trash", "");
         sessionStorage.setItem("emailsVisited", "0");
+        sessionStorage.setItem("initialSpam", "6");
     }
     if(window.location.search.substr(1) != ""){
         loadEmailPrevs(window.location.search.substr(1), eval(window.location.search.substr(1)+"Emails"));
@@ -44,14 +45,14 @@ function openEmail(list, x){
     //add error checking
     var modal = document.getElementById("myModal");
     
-    var emailAddress = document.getElementById("email");
+   // var emailAddress = document.getElementById("email");
     var sender = document.getElementById("sender");
     var subject = document.getElementById("subject");
     var email = document.getElementById("body");
 
-    emailAddress.innerHTML = list[x].senderEmail;
+   // emailAddress.innerHTML = list[x].senderEmail;
     console.log(list[x].sender);
-    sender.innerHTML = list[x].sender;
+    sender.innerHTML = list[x].sender + " (" + list[x].senderEmail + ")";
     subject.innerHTML = list[x].subject;
     email.innerHTML = list[x].text; 
 
@@ -802,10 +803,51 @@ archivedEmails.push({
 var spamEmails = [];
 
 spamEmails.push({
+    senderEmail: "no-reply@spam.com",
+    sender: "Migraine Relief",
+    subject: "Destroy your migraines once and for all!",
+    time: "09/17/19",
+    text: `
+    Discover these delightfully simple Trillo 
+    keyboard shortcuts and learn how new productivity highs 
+    are just a puff of a joint away.
+    If you have your eyes set on a new promotion or more 
+    responsibility at work, learn how to manage up to keep your
+    life from falling apart.
+    `
+});
+
+spamEmails.push({
     senderEmail: "no-reply@trillo.com",
     sender: "Trillo",
     subject: "Get Trillo for Work!",
-    time: "09/10/19",
+    time: "09/17/19",
+    text: `
+    Discover these delightfully simple Trillo 
+    keyboard shortcuts and learn how new productivity highs 
+    are just a puff of a joint away.
+    If you have your eyes set on a new promotion or more 
+    responsibility at work, learn how to manage up to keep your
+    life from falling apart.
+    `
+});
+
+spamEmails.push({
+    senderEmail: "mail@mail.adabe.com",
+    sender: "Adabe Creative Cloud",
+    subject: "The power of the paintbrush",
+    time: "09/15/19",
+    text: `something something advertisement subscription model
+    please buy our insanely expensive products because your company
+    forces you to use it. And also only several of our products are actually good
+    but you're forced to buy and use all of them anyway.`
+});
+
+spamEmails.push({
+    senderEmail: "no-reply@trillo.com",
+    sender: "Trillo",
+    subject: "Get Trillo for Work!",
+    time: "09/12/19",
     text: `
     Discover these delightfully simple Trillo 
     keyboard shortcuts and learn how new productivity highs 

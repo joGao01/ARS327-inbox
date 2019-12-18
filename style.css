@@ -173,7 +173,7 @@ table, tr, td{
 }
 
 .visited {
-	background-color: lightgray;
+	background-color: lavender;
 }
 
 /*.email-prev:visited {
@@ -219,7 +219,7 @@ table, tr, td{
 	background-color: lightgray;
 	margin: 10% auto; /* 15% from the top and centered */
 	padding: 10px 10px;
-	border: 1px solid #888;
+	border: 5px outset #888;
 	width: 60%; /* Could be more or less, depending on screen size */
 }
 /*end of content from w3schools*/
@@ -229,21 +229,20 @@ table, tr, td{
 	text-decoration: underline;
 	color: white;
 	text-align: right;
+	margin-top: 0;
 
 }
 
-#email, #sender, #subject, #body{
+#sender, #subject, #body{
 	background-color:white;
-}
-
-#modal-content #email{
-	font-size: 12px;
-	line-height: 14px;
+	border: 1px inset #888;
+	width: 100%;
+	box-sizing: border-box;
 }
 
 #modal-content #sender{
-	line-height: 10px;
-}
+	margin-top: 0;
+} 
 
 #modal-content #subject{
 	display: inline-block;
@@ -252,5 +251,5 @@ table, tr, td{
 
 #modal-content #body{
 	padding: 0 1vh;
-
+	min-height: 20vh;
 }
